@@ -1,0 +1,205 @@
+* SPICE3 file created from CLA.ext - technology: scmos
+
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.global gnd vdd
+.option scale=0.09u
+
+Vdd vdd gnd {SUPPLY}
+
+* vinv v gnd pulse 0 18 0ns 5ns 5ns 100ns 200ns
+
+VinA0 A0 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinB0 B0 gnd pulse 0 1.8 0ns 0ns 0ns 4ns 8ns
+VinCin Cin gnd pulse 0 1.8 0ns 0ns 0ns 8ns 16ns
+
+M1000 C0 or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1001 C0 or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1002 or_0/nor_0/a_65_6# G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1003 or_0/nor_0/y G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1004 gnd or_0/a or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 or_0/nor_0/y or_0/a or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1006 xor_0/anot A0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1007 xor_0/anot A0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1008 xor_0/bnot B0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1009 xor_0/bnot B0 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1010 P0 xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1011 P0 xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1012 xor_0/node A0 B0 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1013 xor_0/node xor_0/anot xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 xor_1/anot P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1015 xor_1/anot P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1016 xor_1/bnot Cin Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1017 xor_1/bnot Cin gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1018 S0 xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1019 S0 xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1020 xor_1/node P0 Cin Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1021 xor_1/node xor_1/anot xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 G0 and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1023 G0 and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1024 vdd A0 and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1025 and_0/nand_0/a_57_n34# B0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1026 and_0/nand_0/y A0 and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1027 and_0/nand_0/y B0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 or_0/a and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1029 or_0/a and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1030 vdd P0 and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1031 and_1/nand_0/a_57_n34# Cin gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1032 and_1/nand_0/y P0 and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1033 and_1/nand_0/y Cin vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 P0 gnd 0.30fF
+C1 Vdd xor_0/node 0.06fF
+C2 gnd xor_1/bnot 0.13fF
+C3 or_0/nor_0/y gnd 0.21fF
+C4 gnd xor_1/node 0.09fF
+C5 and_1/nand_0/y gnd 0.03fF
+C6 xor_1/bnot xor_1/node 0.23fF
+C7 vdd B0 0.06fF
+C8 xor_1/bnot Vdd 0.28fF
+C9 xor_1/anot P0 0.08fF
+C10 xor_1/node Vdd 0.04fF
+C11 gnd G0 0.05fF
+C12 gnd P0 0.19fF
+C13 Cin P0 0.76fF
+C14 xor_0/bnot gnd 0.13fF
+C15 gnd xor_0/anot 0.13fF
+C16 gnd G0 0.13fF
+C17 Vdd xor_1/anot 0.36fF
+C18 A0 B0 1.56fF
+C19 A0 vdd 0.06fF
+C20 xor_0/node xor_0/anot 0.03fF
+C21 and_1/nand_0/y or_0/a 0.05fF
+C22 gnd and_0/nand_0/y 0.03fF
+C23 xor_0/bnot B0 0.05fF
+C24 xor_1/node S0 0.05fF
+C25 Vdd xor_0/anot 0.36fF
+C26 vdd C0 0.28fF
+C27 gnd or_0/a 0.13fF
+C28 vdd or_0/a 0.06fF
+C29 P0 Vdd 0.28fF
+C30 vdd P0 0.06fF
+C31 P0 xor_0/node 0.05fF
+C32 xor_1/anot gnd 0.13fF
+C33 Cin gnd 0.04fF
+C34 xor_1/node P0 0.04fF
+C35 Vdd B0 0.06fF
+C36 or_0/nor_0/y vdd 0.09fF
+C37 gnd Vdd 0.40fF
+C38 vdd G0 0.28fF
+C39 xor_0/node gnd 0.09fF
+C40 vdd and_1/nand_0/y 0.48fF
+C41 vdd G0 0.06fF
+C42 Vdd gnd 0.40fF
+C43 vdd and_0/nand_0/y 0.48fF
+C44 vdd gnd 0.11fF
+C45 or_0/nor_0/y C0 0.05fF
+C46 B0 xor_0/node 0.22fF
+C47 Vdd xor_0/bnot 0.28fF
+C48 or_0/nor_0/y or_0/a 0.13fF
+C49 A0 and_0/nand_0/y 0.23fF
+C50 G0 or_0/a 0.48fF
+C51 Vdd xor_1/node 0.06fF
+C52 xor_0/anot gnd 0.08fF
+C53 A0 xor_0/node 0.04fF
+C54 Vdd A0 0.06fF
+C55 vdd or_0/a 0.28fF
+C56 xor_0/bnot xor_0/node 0.23fF
+C57 gnd xor_1/anot 0.08fF
+C58 Vdd P0 0.06fF
+C59 Cin vdd 0.06fF
+C60 xor_1/bnot xor_1/anot 0.05fF
+C61 xor_1/anot xor_1/node 0.03fF
+C62 gnd B0 0.04fF
+C63 Vdd S0 0.28fF
+C64 P0 and_1/nand_0/y 0.23fF
+C65 xor_1/bnot Cin 0.05fF
+C66 Cin xor_1/node 0.22fF
+C67 S0 gnd 0.13fF
+C68 A0 xor_0/anot 0.05fF
+C69 Cin Vdd 0.06fF
+C70 G0 and_0/nand_0/y 0.05fF
+C71 Vdd xor_0/node 0.04fF
+C72 gnd C0 0.13fF
+C73 xor_0/bnot xor_0/anot 0.05fF
+C74 vdd Gnd 3.00fF
+C75 P0 Gnd 0.94fF
+C76 Cin Gnd 3.00fF
+C77 gnd Gnd 0.31fF
+C78 and_1/nand_0/y Gnd 0.35fF
+C79 vdd Gnd 3.00fF
+C80 A0 Gnd 0.93fF
+C81 B0 Gnd 1.36fF
+C82 gnd Gnd 0.31fF
+C83 G0 Gnd 0.12fF
+C84 and_0/nand_0/y Gnd 0.35fF
+C85 gnd Gnd 0.17fF
+C86 S0 Gnd 0.17fF
+C87 xor_1/node Gnd 1.96fF
+C88 Vdd Gnd 1.21fF
+C89 gnd Gnd 0.17fF
+C90 xor_1/bnot Gnd 0.30fF
+C91 Vdd Gnd 1.21fF
+C92 gnd Gnd 0.17fF
+C93 xor_1/anot Gnd 0.12fF
+C94 Vdd Gnd 1.21fF
+C95 gnd Gnd 0.17fF
+C96 xor_0/node Gnd 1.96fF
+C97 Vdd Gnd 1.21fF
+C98 gnd Gnd 0.17fF
+C99 xor_0/bnot Gnd 0.30fF
+C100 Vdd Gnd 1.21fF
+C101 gnd Gnd 0.17fF
+C102 xor_0/anot Gnd 0.12fF
+C103 Vdd Gnd 1.21fF
+C104 vdd Gnd 3.05fF
+C105 gnd Gnd 0.34fF
+C106 or_0/nor_0/y Gnd 0.36fF
+C107 or_0/a Gnd 0.49fF
+C108 C0 Gnd 0.55fF
+
+.tran 0.01n 16n 
+
+.control
+run
+* set background & foreground color
+set color0 = white 
+set color1 = black
+
+* plot the waveforms
+plot 8+C0 6+S0 4+B0 2+A0 Cin
+
+.endc

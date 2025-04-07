@@ -1,0 +1,39 @@
+* SPICE3 file created from nor.ext - technology: scmos
+.include TSMC_180nm.txt
+.global Vdd Gnd
+.option scale=0.09u
+
+Vdd Vdd 0 1.8
+Vina a 0 PULSE(0 1.8 0 0n 0n 1n 2n)
+Vinb b 0 PULSE(0 1.8 0 0n 0n 2n 4n)
+
+M1000 a_65_6# b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=120 ps=52
+M1001 y b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=150 ps=70
+M1002 gnd a y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 y a a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+C0 y vdd 0.02fF
+C1 vdd b 0.06fF
+C2 y gnd 0.21fF
+C3 a y 0.13fF
+C4 a b 0.37fF
+C5 a vdd 0.06fF
+C6 gnd Gnd 0.12fF
+C7 y Gnd 0.12fF
+C8 a Gnd 0.23fF
+C9 b Gnd 0.22fF
+C10 vdd Gnd 1.73fF
+
+.tran 0.01n 10n
+
+.control
+set color0 = white
+set color1 = black
+
+run
+plot V(a) 2+V(b) 4+V(y)
+
+.endc

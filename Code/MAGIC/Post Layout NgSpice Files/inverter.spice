@@ -1,0 +1,33 @@
+* Harshit Goyal - 2023102054
+.include TSMC_180nm.txt
+.global Vdd Gnd
+.option scale=0.09u
+
+Vdd Vdd 0 1.8
+Vin IN 0 PULSE(0 1.8 0 0n 0n 1n 2n)
+
+M1000 OUT IN Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1001 OUT IN gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+C0 IN Vdd 0.06fF
+C1 OUT Vdd 0.28fF
+C2 gnd OUT 0.13fF
+C3 IN OUT 0.05fF
+C4 gnd Gnd 0.17fF
+C5 OUT Gnd 0.10fF
+C6 IN Gnd 0.22fF
+C7 Vdd Gnd 1.21fF
+
+.tran 0.1n 10n
+
+.control
+set color0 = white
+set color1 = black
+set curplottitle = "Harshit Goyal - 2023102054"
+
+run
+plot V(IN) 2+V(OUT)
+
+
+.endc

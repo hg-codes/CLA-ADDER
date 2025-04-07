@@ -1,0 +1,47 @@
+* SPICE3 file created from or.ext - technology: scmos
+.include TSMC_180nm.txt
+.global Vdd Gnd
+.option scale=0.09u
+
+Vdd Vdd 0 1.8
+Vina a 0 PULSE(0 1.8 0 0n 0n 1n 2n)
+Vinb b 0 PULSE(0 1.8 0 0n 0n 2n 4n)
+
+M1000 y nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1001 y nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1002 nor_0/a_65_6# b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1003 nor_0/y b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1004 gnd a nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 nor_0/y a nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+C0 a vdd 0.06fF
+C1 y gnd 0.13fF
+C2 a nor_0/y 0.13fF
+C3 y vdd 0.28fF
+C4 a b 0.43fF
+C5 nor_0/y y 0.05fF
+C6 nor_0/y gnd 0.21fF
+C7 nor_0/y vdd 0.09fF
+C8 b vdd 0.06fF
+C9 vdd Gnd 3.05fF
+C10 a Gnd 0.26fF
+C11 b Gnd 0.24fF
+C12 gnd Gnd 0.34fF
+C13 y Gnd 0.13fF
+C14 nor_0/y Gnd 0.36fF
+.tran 0.01n 10n
+
+.control
+set color0 = white
+set color1 = black
+
+run
+plot V(a) 2+V(b) 4+V(y)
+set curplottitle = "Harshit Goyal - 2023102054"
+
+.endc

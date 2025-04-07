@@ -1,0 +1,59 @@
+magic
+tech scmos
+timestamp 1731971221
+<< error_s >>
+rect 282 149 283 151
+rect 283 148 285 149
+rect 0 1 1 3
+rect 1 0 3 1
+<< pdiffusion >>
+rect 282 148 283 149
+rect 0 0 1 1
+<< metal1 >>
+rect 378 278 388 282
+rect 8 67 14 71
+rect -2 53 4 59
+rect 371 -84 382 -80
+rect 4 -295 6 -290
+rect -10 -309 -4 -303
+rect 363 -446 375 -442
+rect -4 -657 -2 -652
+rect -18 -671 -12 -665
+rect 352 -808 367 -804
+rect -12 -1019 -10 -1015
+rect -26 -1033 -20 -1027
+rect 157 -1061 177 -1057
+<< metal2 >>
+rect 129 357 134 365
+use CLA  CLA_3
+timestamp 1731970779
+transform 1 0 -16 0 1 -963
+box -8 -123 375 239
+use CLA  CLA_2
+timestamp 1731970779
+transform 1 0 -8 0 1 -601
+box -8 -123 375 239
+use CLA  CLA_1
+timestamp 1731970779
+transform 1 0 0 0 1 -239
+box -8 -123 375 239
+use CLA  CLA_0
+timestamp 1731970779
+transform 1 0 8 0 1 123
+box -8 -123 375 239
+<< labels >>
+rlabel metal1 365 -806 365 -806 1 S3
+rlabel metal1 373 -444 373 -444 1 S2
+rlabel metal1 380 -82 380 -82 7 S1
+rlabel metal1 386 280 386 280 7 S0
+rlabel metal2 132 364 132 364 5 Cin
+rlabel metal1 13 69 13 69 1 A0
+rlabel metal1 -1 54 -1 54 1 B0
+rlabel metal1 5 -293 5 -293 1 A1
+rlabel metal1 -9 -308 -9 -308 1 B1
+rlabel metal1 -3 -655 -3 -655 1 A2
+rlabel metal1 -17 -670 -17 -670 1 B2
+rlabel metal1 -11 -1017 -11 -1017 1 A3
+rlabel metal1 -25 -1032 -25 -1032 3 B3
+rlabel metal1 172 -1060 172 -1060 1 Cout
+<< end >>

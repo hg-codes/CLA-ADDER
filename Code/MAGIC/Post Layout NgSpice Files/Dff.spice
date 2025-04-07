@@ -1,0 +1,123 @@
+* Harshit Goyal 2023102054
+* SPICE3 file created from Dff.ext - technology: scmos
+
+.include TSMC_180nm.txt
+.global Vdd Gnd
+.option scale=0.09u
+
+Vdd Vdd 0 1.8
+Vina clk 0 PULSE(0 1.8 0.9ns 0n 0n 1n 2n)
+Vinb d 0 PULSE(0 1.8 0 0n 0n 2n 4n)
+
+M1000 q1 clk a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1001 qnot q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1002 a_6_6# d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1003 b clk a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1004 a_47_6# b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 b d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1006 a clk a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1007 q qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1008 q2 clk a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1009 a_131_15# a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 q qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1011 a q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1012 qnot q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1013 q1 b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1014 q2 a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1015 a_90_15# q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_90_15# gnd 0.10fF
+C1 clk a_90_15# 0.05fF
+C2 gnd q1 0.16fF
+C3 q2 gnd 0.05fF
+C4 a_47_6# clk 0.05fF
+C5 clk q1 0.32fF
+C6 qnot q 0.05fF
+C7 q2 clk 0.07fF
+C8 a a_90_15# 0.10fF
+C9 clk vdd 0.29fF
+C10 a_47_6# b 0.10fF
+C11 b q1 0.05fF
+C12 a_6_6# vdd 0.37fF
+C13 a q1 0.05fF
+C14 vdd b 0.24fF
+C15 a q2 0.05fF
+C16 a vdd 0.46fF
+C17 clk gnd 1.43fF
+C18 gnd b 0.16fF
+C19 q2 a_131_15# 0.10fF
+C20 a_6_6# clk 0.05fF
+C21 a gnd 0.05fF
+C22 clk b 0.39fF
+C23 a clk 0.32fF
+C24 q vdd 0.29fF
+C25 a_6_6# b 0.24fF
+C26 q2 qnot 0.05fF
+C27 qnot vdd 0.36fF
+C28 vdd d 0.19fF
+C29 a_131_15# gnd 0.10fF
+C30 q gnd 0.13fF
+C31 clk a_131_15# 0.05fF
+C32 qnot gnd 0.19fF
+C33 gnd d 0.05fF
+C34 a_90_15# q1 0.11fF
+C35 a a_131_15# 0.11fF
+C36 a_47_6# q1 0.24fF
+C37 clk d 0.32fF
+C38 a_6_6# d 0.10fF
+C39 a_47_6# vdd 0.37fF
+C40 vdd q1 0.22fF
+C41 d b 0.05fF
+C42 q2 vdd 0.37fF
+C43 gnd Gnd 0.40fF
+C44 a_131_15# Gnd 0.12fF
+C45 a_90_15# Gnd 0.14fF
+C46 clk Gnd 3.27fF
+C47 q Gnd 0.07fF
+C48 a_47_6# Gnd 0.00fF
+C49 a_6_6# Gnd 0.00fF
+C50 qnot Gnd 0.21fF
+C51 q2 Gnd 0.05fF
+C52 a Gnd 0.45fF
+C53 q1 Gnd 0.06fF
+C54 b Gnd 0.21fF
+C55 d Gnd 0.14fF
+C56 vdd Gnd 8.44fF
+
+.tran 0.01n 10n
+
+.control
+set color0 = white
+set color1 = black
+
+run
+plot V(clk) 2+V(d) 4+V(q)
+
+.endc
+
+.measure tran tpdr
++ trig v(clk) val={0.5*1.8} rise=1
++ targ v(q) val={0.5*1.8} rise=1
+
+.measure tran tpdf
++ trig v(clk) val={0.5*1.8} rise=2
++ targ v(q) val={0.5*1.8} fall=1
+
+.measure tran tpd param='(tpdr+tpdf)/2'
+
+.end

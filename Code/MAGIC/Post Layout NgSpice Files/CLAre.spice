@@ -1,0 +1,1388 @@
+* Harshit Goyal -2023102054 
+* SPICE3 file created from final4bitCLA.ext - technology: scmos
+
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.global gnd vdd
+.option scale=0.09u
+
+Vdd vdd gnd {SUPPLY}
+
+* vinv v gnd pulse 0 1.8 0ns 5ns 5ns 100ns 200ns
+
+VinA0 A0 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinA1 A1 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA2 A2 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA3 A3 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+VinB0 B0 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinB1 B1 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB2 B2 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB3 B3 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+
+VinCin Cin gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+M1000 or_1/a and_5/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1001 or_1/a and_5/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1002 vdd G0 and_5/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1003 and_5/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1004 and_5/nand_0/y G0 and_5/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1005 and_5/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 or_1/b and_7/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1007 or_1/b and_7/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1008 vdd and_7/a and_7/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1009 and_7/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1010 and_7/nand_0/y and_7/a and_7/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1011 and_7/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 and_7/a and_6/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1013 and_7/a and_6/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1014 vdd Cin and_6/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1015 and_6/nand_0/a_57_n34# P0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1016 and_6/nand_0/y Cin and_6/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1017 and_6/nand_0/y P0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 or_3/a and_8/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1019 or_3/a and_8/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1020 vdd G1 and_8/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1021 and_8/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1022 and_8/nand_0/y G1 and_8/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1023 and_8/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 and_9/y and_9/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1025 and_9/y and_9/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1026 vdd G0 and_9/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1027 and_9/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1028 and_9/nand_0/y G0 and_9/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1029 and_9/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 or_0/y or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1031 or_0/y or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1032 or_0/nor_0/a_65_6# G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1033 or_0/nor_0/y G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1034 gnd or_0/a or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 or_0/nor_0/y or_0/a or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1036 or_2/a or_1/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1037 or_2/a or_1/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1038 or_1/nor_0/a_65_6# or_1/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1039 or_1/nor_0/y or_1/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1040 gnd or_1/a or_1/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1041 or_1/nor_0/y or_1/a or_1/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1042 or_2/y or_2/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1043 or_2/y or_2/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1044 or_2/nor_0/a_65_6# G1 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1045 or_2/nor_0/y G1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1046 gnd or_2/a or_2/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 or_2/nor_0/y or_2/a or_2/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1048 or_4/a or_3/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1049 or_4/a or_3/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1050 or_3/nor_0/a_65_6# or_3/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1051 or_3/nor_0/y or_3/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1052 gnd or_3/a or_3/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1053 or_3/nor_0/y or_3/a or_3/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1054 or_5/a or_4/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1055 or_5/a or_4/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1056 or_4/nor_0/a_65_6# or_4/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1057 or_4/nor_0/y or_4/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1058 gnd or_4/a or_4/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 or_4/nor_0/y or_4/a or_4/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1060 or_5/y or_5/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1061 or_5/y or_5/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1062 or_5/nor_0/a_65_6# G2 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1063 or_5/nor_0/y G2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1064 gnd or_5/a or_5/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1065 or_5/nor_0/y or_5/a or_5/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1066 xor_0/anot A0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1067 xor_0/anot A0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1068 xor_0/bnot B0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1069 xor_0/bnot B0 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1070 P0 xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1071 P0 xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1072 xor_0/node A0 B0 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1073 xor_0/node xor_0/anot xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1074 or_7/a or_6/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1075 or_7/a or_6/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1076 or_6/nor_0/a_65_6# or_6/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1077 or_6/nor_0/y or_6/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1078 gnd or_6/a or_6/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1079 or_6/nor_0/y or_6/a or_6/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1080 and_21/a and_20/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1081 and_21/a and_20/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1082 vdd Cin and_20/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1083 and_20/nand_0/a_57_n34# P0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1084 and_20/nand_0/y Cin and_20/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1085 and_20/nand_0/y P0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1086 xor_1/anot A1 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1087 xor_1/anot A1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1088 xor_1/bnot B1 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1089 xor_1/bnot B1 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1090 P1 xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1091 P1 xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1092 xor_1/node A1 B1 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1093 xor_1/node xor_1/anot xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1094 or_3/b and_10/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1095 or_3/b and_10/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1096 vdd and_9/y and_10/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1097 and_10/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1098 and_10/nand_0/y and_9/y and_10/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1099 and_10/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 or_8/a or_7/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1101 or_8/a or_7/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1102 or_7/nor_0/a_65_6# or_7/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1103 or_7/nor_0/y or_7/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1104 gnd or_7/a or_7/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1105 or_7/nor_0/y or_7/a or_7/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1106 and_22/a and_21/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1107 and_22/a and_21/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1108 vdd and_21/a and_21/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1109 and_21/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1110 and_21/nand_0/y and_21/a and_21/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1111 and_21/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1112 and_12/a and_11/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1113 and_12/a and_11/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1114 vdd Cin and_11/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1115 and_11/nand_0/a_57_n34# P0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1116 and_11/nand_0/y Cin and_11/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1117 and_11/nand_0/y P0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1118 xor_2/anot A2 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1119 xor_2/anot A2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1120 xor_2/bnot B2 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1121 xor_2/bnot B2 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1122 P2 xor_2/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1123 P2 xor_2/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1124 xor_2/node A2 B2 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1125 xor_2/node xor_2/anot xor_2/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1126 or_9/a or_8/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1127 or_9/a or_8/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1128 or_8/nor_0/a_65_6# or_8/b vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1129 or_8/nor_0/y or_8/b gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1130 gnd or_8/a or_8/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1131 or_8/nor_0/y or_8/a or_8/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1132 and_23/a and_22/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1133 and_23/a and_22/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1134 vdd and_22/a and_22/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1135 and_22/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1136 and_22/nand_0/y and_22/a and_22/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1137 and_22/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1138 and_13/a and_12/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1139 and_13/a and_12/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1140 vdd and_12/a and_12/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1141 and_12/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1142 and_12/nand_0/y and_12/a and_12/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1143 and_12/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1144 xor_3/anot A3 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1145 xor_3/anot A3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1146 xor_3/bnot B3 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1147 xor_3/bnot B3 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1148 P3 xor_3/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1149 P3 xor_3/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1150 xor_3/node A3 B3 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1151 xor_3/node xor_3/anot xor_3/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1152 C4 or_9/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1153 C4 or_9/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1154 or_9/nor_0/a_65_6# G3 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1155 or_9/nor_0/y G3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1156 gnd or_9/a or_9/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1157 or_9/nor_0/y or_9/a or_9/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1158 or_8/b and_23/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1159 or_8/b and_23/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1160 vdd and_23/a and_23/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1161 and_23/nand_0/a_57_n34# P3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1162 and_23/nand_0/y and_23/a and_23/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1163 and_23/nand_0/y P3 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1164 xor_4/anot P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1165 xor_4/anot P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1166 xor_4/bnot Cin Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1167 xor_4/bnot Cin gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1168 S0 xor_4/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1169 S0 xor_4/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1170 xor_4/node P0 Cin Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1171 xor_4/node xor_4/anot xor_4/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1172 or_4/b and_13/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1173 or_4/b and_13/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1174 vdd and_13/a and_13/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1175 and_13/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1176 and_13/nand_0/y and_13/a and_13/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1177 and_13/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1178 xor_5/anot P1 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1179 xor_5/anot P1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1180 xor_5/bnot or_0/y Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1181 xor_5/bnot or_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1182 S1 xor_5/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1183 S1 xor_5/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1184 xor_5/node P1 or_0/y Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1185 xor_5/node xor_5/anot xor_5/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1186 or_6/a and_14/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1187 or_6/a and_14/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1188 vdd P3 and_14/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1189 and_14/nand_0/a_57_n34# G3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1190 and_14/nand_0/y P3 and_14/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1191 and_14/nand_0/y G3 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1192 and_16/a and_15/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1193 and_16/a and_15/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1194 vdd G1 and_15/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1195 and_15/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1196 and_15/nand_0/y G1 and_15/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1197 and_15/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1198 xor_6/anot P2 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1199 xor_6/anot P2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1200 xor_6/bnot or_2/y Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1201 xor_6/bnot or_2/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1202 S2 xor_6/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1203 S2 xor_6/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1204 xor_6/node P2 or_2/y Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1205 xor_6/node xor_6/anot xor_6/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1206 or_6/b and_16/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1207 or_6/b and_16/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1208 vdd and_16/a and_16/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1209 and_16/nand_0/a_57_n34# P3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1210 and_16/nand_0/y and_16/a and_16/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1211 and_16/nand_0/y P3 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1212 xor_7/anot P3 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1213 xor_7/anot P3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1214 xor_7/bnot or_5/y Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1215 xor_7/bnot or_5/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1216 S3 xor_7/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1217 S3 xor_7/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1218 xor_7/node P3 or_5/y Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1219 xor_7/node xor_7/anot xor_7/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1220 and_18/a and_17/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1221 and_18/a and_17/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1222 vdd G0 and_17/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1223 and_17/nand_0/a_57_n34# P1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1224 and_17/nand_0/y G0 and_17/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1225 and_17/nand_0/y P1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1226 and_19/a and_18/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1227 and_19/a and_18/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1228 vdd and_18/a and_18/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1229 and_18/nand_0/a_57_n34# P2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1230 and_18/nand_0/y and_18/a and_18/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1231 and_18/nand_0/y P2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1232 or_7/b and_19/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1233 or_7/b and_19/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1234 vdd and_19/a and_19/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1235 and_19/nand_0/a_57_n34# P3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1236 and_19/nand_0/y and_19/a and_19/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1237 and_19/nand_0/y P3 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1238 G0 and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1239 G0 and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1240 vdd A0 and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1241 and_0/nand_0/a_57_n34# B0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1242 and_0/nand_0/y A0 and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1243 and_0/nand_0/y B0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1244 G1 and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1245 G1 and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1246 vdd A1 and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1247 and_1/nand_0/a_57_n34# B1 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1248 and_1/nand_0/y A1 and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1249 and_1/nand_0/y B1 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1250 G2 and_2/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1251 G2 and_2/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1252 vdd A2 and_2/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1253 and_2/nand_0/a_57_n34# B2 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1254 and_2/nand_0/y A2 and_2/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1255 and_2/nand_0/y B2 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1256 G3 and_3/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1257 G3 and_3/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1258 vdd A3 and_3/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1259 and_3/nand_0/a_57_n34# B3 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1260 and_3/nand_0/y A3 and_3/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1261 and_3/nand_0/y B3 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1262 or_0/a and_4/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1263 or_0/a and_4/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1264 vdd Cin and_4/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1265 and_4/nand_0/a_57_n34# P0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1266 and_4/nand_0/y Cin and_4/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1267 and_4/nand_0/y P0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 or_4/a or_4/nor_0/y 0.13fF
+C1 P0 Vdd 0.06fF
+C2 P2 vdd 0.06fF
+C3 P1 vdd 0.06fF
+C4 vdd Cin 0.06fF
+C5 gnd xor_6/node 0.09fF
+C6 Vdd xor_2/anot 0.36fF
+C7 P1 and_21/a 0.43fF
+C8 gnd xor_0/anot 0.08fF
+C9 and_9/nand_0/y vdd 0.48fF
+C10 G1 G3 0.43fF
+C11 xor_5/bnot xor_5/node 0.23fF
+C12 vdd or_7/a 0.06fF
+C13 gnd P1 0.04fF
+C14 gnd P2 0.46fF
+C15 and_22/a P2 0.43fF
+C16 and_2/nand_0/y A2 0.23fF
+C17 G1 P1 4.60fF
+C18 xor_3/node xor_3/bnot 0.23fF
+C19 G1 P2 7.56fF
+C20 G2 Cin 0.54fF
+C21 gnd xor_0/anot 0.13fF
+C22 xor_6/anot xor_6/bnot 0.05fF
+C23 gnd and_21/a 0.13fF
+C24 G1 vdd 0.06fF
+C25 vdd or_5/a 0.28fF
+C26 gnd or_0/y 0.13fF
+C27 gnd P1 0.18fF
+C28 vdd G3 0.06fF
+C29 and_7/a and_7/nand_0/y 0.23fF
+C30 xor_2/node A2 0.04fF
+C31 or_9/nor_0/y gnd 0.21fF
+C32 or_7/a gnd 0.13fF
+C33 P1 vdd 0.06fF
+C34 or_3/a vdd 0.06fF
+C35 P3 G2 2.83fF
+C36 xor_6/anot xor_6/node 0.03fF
+C37 and_8/nand_0/y or_3/a 0.05fF
+C38 or_6/b vdd 0.06fF
+C39 and_19/a gnd 0.13fF
+C40 or_8/b gnd 0.13fF
+C41 G3 vdd 0.06fF
+C42 gnd or_3/a 0.13fF
+C43 and_13/nand_0/y and_13/a 0.23fF
+C44 xor_4/anot xor_4/bnot 0.05fF
+C45 gnd and_9/nand_0/y 0.03fF
+C46 gnd P0 0.04fF
+C47 G0 Cin 0.54fF
+C48 gnd Vdd 0.40fF
+C49 or_9/a gnd 0.13fF
+C50 vdd and_12/nand_0/y 0.48fF
+C51 or_2/y or_2/nor_0/y 0.05fF
+C52 B2 gnd 0.04fF
+C53 Vdd xor_6/node 0.06fF
+C54 xor_3/node B3 0.22fF
+C55 xor_2/node xor_2/bnot 0.23fF
+C56 xor_1/bnot gnd 0.13fF
+C57 B1 xor_1/node 0.22fF
+C58 gnd Vdd 0.40fF
+C59 gnd P2 0.13fF
+C60 or_3/nor_0/y or_4/a 0.05fF
+C61 vdd P2 0.06fF
+C62 P3 G0 0.54fF
+C63 and_4/nand_0/y vdd 0.48fF
+C64 xor_7/bnot or_5/y 0.05fF
+C65 xor_4/anot P0 0.05fF
+C66 B3 A3 2.06fF
+C67 vdd or_3/b 0.06fF
+C68 B1 vdd 0.06fF
+C69 gnd or_3/b 0.13fF
+C70 and_3/nand_0/y A3 0.23fF
+C71 and_1/nand_0/y vdd 0.48fF
+C72 gnd P0 0.04fF
+C73 G2 G3 0.22fF
+C74 gnd xor_2/node 0.09fF
+C75 or_1/b and_7/nand_0/y 0.05fF
+C76 G2 P1 0.87fF
+C77 G2 P2 4.75fF
+C78 Cin xor_4/bnot 0.05fF
+C79 and_11/nand_0/y Cin 0.23fF
+C80 vdd or_2/a 0.28fF
+C81 or_0/nor_0/y gnd 0.21fF
+C82 or_4/b vdd 0.06fF
+C83 and_17/nand_0/y gnd 0.03fF
+C84 and_18/a vdd 0.28fF
+C85 vdd P2 0.06fF
+C86 Vdd or_0/y 0.06fF
+C87 xor_6/anot Vdd 0.36fF
+C88 vdd P0 0.06fF
+C89 xor_7/node or_5/y 0.22fF
+C90 or_4/nor_0/y gnd 0.21fF
+C91 xor_3/node Vdd 0.04fF
+C92 or_0/y P1 0.05fF
+C93 G0 G3 0.54fF
+C94 or_1/a vdd 0.05fF
+C95 or_6/nor_0/y vdd 0.09fF
+C96 or_1/nor_0/y or_2/a 0.05fF
+C97 xor_3/bnot gnd 0.13fF
+C98 P3 xor_7/anot 0.05fF
+C99 xor_6/node P2 0.04fF
+C100 vdd or_1/b 0.06fF
+C101 P0 Cin 10.96fF
+C102 and_22/a vdd 0.06fF
+C103 G0 P1 7.49fF
+C104 G0 P2 0.54fF
+C105 and_0/nand_0/y G0 0.05fF
+C106 gnd and_21/nand_0/y 0.03fF
+C107 or_3/a or_3/nor_0/y 0.13fF
+C108 xor_4/anot gnd 0.08fF
+C109 vdd P1 0.06fF
+C110 or_6/a vdd 0.06fF
+C111 or_6/a and_14/nand_0/y 0.05fF
+C112 C4 vdd 0.28fF
+C113 gnd xor_7/anot 0.08fF
+C114 P3 P0 0.54fF
+C115 xor_7/node S3 0.05fF
+C116 xor_7/bnot gnd 0.13fF
+C117 Vdd xor_2/node 0.06fF
+C118 xor_5/node or_0/y 0.22fF
+C119 or_8/b vdd 0.28fF
+C120 P3 xor_7/node 0.04fF
+C121 S1 gnd 0.13fF
+C122 vdd A3 0.06fF
+C123 or_6/a or_6/b 0.61fF
+C124 xor_2/node Vdd 0.04fF
+C125 G0 and_9/nand_0/y 0.23fF
+C126 xor_2/node P2 0.05fF
+C127 P0 vdd 0.06fF
+C128 vdd or_4/nor_0/y 0.09fF
+C129 and_23/a vdd 0.06fF
+C130 G3 and_3/nand_0/y 0.05fF
+C131 and_10/nand_0/y gnd 0.03fF
+C132 Vdd or_5/y 0.06fF
+C133 or_8/nor_0/y vdd 0.09fF
+C134 A0 xor_0/node 0.04fF
+C135 or_7/nor_0/y or_8/a 0.05fF
+C136 gnd P2 0.18fF
+C137 S0 gnd 0.13fF
+C138 vdd and_9/y 0.06fF
+C139 or_7/nor_0/y gnd 0.21fF
+C140 gnd P2 0.04fF
+C141 or_4/b gnd 0.13fF
+C142 and_22/nand_0/y gnd 0.03fF
+C143 P1 gnd 0.13fF
+C144 gnd xor_7/node 0.09fF
+C145 and_23/a and_22/nand_0/y 0.05fF
+C146 P3 gnd 0.04fF
+C147 Vdd P2 0.06fF
+C148 xor_2/node xor_2/anot 0.03fF
+C149 G3 P0 0.54fF
+C150 P1 gnd 0.18fF
+C151 P2 gnd 0.05fF
+C152 Cin Vdd 0.06fF
+C153 P2 gnd 0.18fF
+C154 B0 Vdd 0.06fF
+C155 xor_3/anot Vdd 0.36fF
+C156 B0 xor_0/node 0.22fF
+C157 vdd or_7/b 0.28fF
+C158 or_0/a vdd 0.06fF
+C159 P1 P0 0.54fF
+C160 P0 P2 0.54fF
+C161 or_5/nor_0/y vdd 0.09fF
+C162 and_12/a vdd 0.06fF
+C163 xor_5/bnot or_0/y 0.05fF
+C164 and_18/a and_18/nand_0/y 0.23fF
+C165 xor_6/bnot or_2/y 0.05fF
+C166 vdd Cin 0.06fF
+C167 and_10/nand_0/y and_9/y 0.23fF
+C168 G0 vdd 0.06fF
+C169 or_1/a vdd 0.28fF
+C170 vdd or_6/b 0.28fF
+C171 xor_4/node xor_4/bnot 0.23fF
+C172 and_6/nand_0/y gnd 0.03fF
+C173 Vdd xor_0/node 0.06fF
+C174 P0 Vdd 0.28fF
+C175 xor_3/node xor_3/anot 0.03fF
+C176 P2 and_9/y 0.43fF
+C177 gnd P0 0.04fF
+C178 P3 and_23/a 0.43fF
+C179 gnd G0 0.13fF
+C180 xor_6/node or_2/y 0.22fF
+C181 gnd xor_1/anot 0.13fF
+C182 G2 G1 0.43fF
+C183 and_6/nand_0/y and_7/a 0.05fF
+C184 G0 or_0/a 0.45fF
+C185 A0 vdd 0.06fF
+C186 or_6/a or_6/nor_0/y 0.13fF
+C187 A3 xor_3/anot 0.05fF
+C188 or_5/y vdd 0.28fF
+C189 and_5/nand_0/y or_1/a 0.05fF
+C190 gnd xor_5/anot 0.08fF
+C191 G0 vdd 0.06fF
+C192 and_12/a P1 0.43fF
+C193 G3 or_9/a 0.82fF
+C194 C4 or_9/nor_0/y 0.05fF
+C195 gnd and_4/nand_0/y 0.03fF
+C196 xor_4/anot Vdd 0.36fF
+C197 B1 gnd 0.04fF
+C198 and_11/nand_0/y gnd 0.03fF
+C199 G1 vdd 0.06fF
+C200 Vdd xor_7/node 0.06fF
+C201 P3 and_14/nand_0/y 0.23fF
+C202 G3 vdd 0.28fF
+C203 xor_4/node P0 0.04fF
+C204 xor_0/node gnd 0.09fF
+C205 gnd and_1/nand_0/y 0.03fF
+C206 or_1/nor_0/y gnd 0.21fF
+C207 vdd and_13/a 0.28fF
+C208 and_9/nand_0/y and_9/y 0.05fF
+C209 xor_5/node S1 0.05fF
+C210 vdd B0 0.06fF
+C211 xor_5/anot gnd 0.13fF
+C212 Vdd gnd 0.40fF
+C213 B2 A2 1.53fF
+C214 or_3/nor_0/y gnd 0.21fF
+C215 vdd and_0/nand_0/y 0.48fF
+C216 G1 G0 0.54fF
+C217 gnd P1 0.04fF
+C218 and_19/nand_0/y or_7/b 0.05fF
+C219 G3 gnd 0.13fF
+C220 G2 or_5/a 0.57fF
+C221 Vdd xor_1/bnot 0.28fF
+C222 gnd P0 0.04fF
+C223 vdd or_8/a 0.28fF
+C224 gnd xor_7/anot 0.13fF
+C225 or_8/a vdd 0.06fF
+C226 xor_4/node S0 0.05fF
+C227 gnd P1 0.18fF
+C228 xor_0/node xor_0/anot 0.03fF
+C229 gnd P2 0.18fF
+C230 P1 xor_1/node 0.05fF
+C231 or_1/a vdd 0.06fF
+C232 and_4/nand_0/y Cin 0.23fF
+C233 and_7/a gnd 0.13fF
+C234 G2 vdd 0.28fF
+C235 vdd and_19/a 0.28fF
+C236 and_20/nand_0/y vdd 0.48fF
+C237 gnd xor_5/node 0.09fF
+C238 B2 xor_2/bnot 0.05fF
+C239 B0 xor_0/bnot 0.05fF
+C240 and_6/nand_0/y Cin 0.23fF
+C241 P2 and_13/a 0.49fF
+C242 or_0/a or_0/nor_0/y 0.13fF
+C243 and_16/nand_0/y gnd 0.03fF
+C244 gnd xor_2/anot 0.13fF
+C245 and_18/a and_17/nand_0/y 0.05fF
+C246 P3 gnd 0.18fF
+C247 vdd and_21/nand_0/y 0.48fF
+C248 or_1/a or_1/nor_0/y 0.13fF
+C249 and_20/nand_0/y Cin 0.23fF
+C250 and_17/nand_0/y vdd 0.48fF
+C251 Vdd or_2/y 0.06fF
+C252 xor_6/anot gnd 0.13fF
+C253 gnd xor_4/node 0.09fF
+C254 A1 Vdd 0.06fF
+C255 P3 gnd 0.13fF
+C256 and_9/y vdd 0.28fF
+C257 and_12/a gnd 0.13fF
+C258 or_2/nor_0/y gnd 0.21fF
+C259 and_8/nand_0/y G1 0.23fF
+C260 xor_4/node Vdd 0.04fF
+C261 or_4/b vdd 0.28fF
+C262 gnd and_7/nand_0/y 0.03fF
+C263 P3 Vdd 0.06fF
+C264 gnd xor_1/node 0.09fF
+C265 S3 gnd 0.13fF
+C266 and_14/nand_0/y gnd 0.03fF
+C267 xor_1/anot gnd 0.08fF
+C268 vdd and_19/a 0.06fF
+C269 vdd or_0/y 0.28fF
+C270 xor_3/anot gnd 0.08fF
+C271 vdd and_7/nand_0/y 0.48fF
+C272 or_9/nor_0/y vdd 0.09fF
+C273 or_7/a or_7/b 0.63fF
+C274 or_7/a vdd 0.28fF
+C275 or_5/y or_5/nor_0/y 0.05fF
+C276 and_6/nand_0/y vdd 0.48fF
+C277 G1 P0 0.54fF
+C278 G0 vdd 0.06fF
+C279 A3 Vdd 0.06fF
+C280 G2 G0 0.54fF
+C281 xor_6/bnot xor_6/node 0.23fF
+C282 xor_5/bnot gnd 0.13fF
+C283 and_2/nand_0/y vdd 0.48fF
+C284 gnd or_1/a 0.13fF
+C285 Vdd gnd 0.40fF
+C286 gnd Vdd 0.40fF
+C287 xor_0/bnot gnd 0.13fF
+C288 or_4/a vdd 0.06fF
+C289 or_3/a or_3/b 0.57fF
+C290 gnd and_15/nand_0/y 0.03fF
+C291 or_9/a vdd 0.28fF
+C292 or_2/y gnd 0.13fF
+C293 gnd and_9/y 0.13fF
+C294 Vdd xor_5/node 0.06fF
+C295 G2 and_2/nand_0/y 0.05fF
+C296 Vdd S2 0.28fF
+C297 gnd or_7/b 0.13fF
+C298 or_8/b vdd 0.06fF
+C299 gnd or_4/a 0.13fF
+C300 xor_3/node A3 0.04fF
+C301 A1 xor_1/node 0.04fF
+C302 or_5/a or_4/nor_0/y 0.05fF
+C303 vdd and_11/nand_0/y 0.48fF
+C304 or_8/a or_8/nor_0/y 0.13fF
+C305 A1 xor_1/anot 0.05fF
+C306 P3 and_19/a 0.43fF
+C307 Vdd xor_4/node 0.06fF
+C308 xor_0/bnot xor_0/anot 0.05fF
+C309 and_15/nand_0/y and_16/a 0.05fF
+C310 xor_6/anot gnd 0.08fF
+C311 and_13/nand_0/y gnd 0.03fF
+C312 A1 vdd 0.06fF
+C313 and_16/nand_0/y or_6/b 0.05fF
+C314 xor_3/anot gnd 0.13fF
+C315 Vdd xor_1/node 0.06fF
+C316 G0 vdd 0.06fF
+C317 and_23/a vdd 0.28fF
+C318 P3 vdd 0.43fF
+C319 B2 Vdd 0.06fF
+C320 and_19/nand_0/y and_19/a 0.23fF
+C321 vdd P0 0.06fF
+C322 vdd or_7/b 0.06fF
+C323 gnd xor_2/bnot 0.13fF
+C324 or_0/nor_0/y vdd 0.09fF
+C325 or_0/a vdd 0.28fF
+C326 and_7/a vdd 0.28fF
+C327 and_20/nand_0/y gnd 0.03fF
+C328 and_8/nand_0/y vdd 0.48fF
+C329 gnd and_12/nand_0/y 0.03fF
+C330 and_5/nand_0/y G0 0.23fF
+C331 gnd and_22/a 0.13fF
+C332 vdd Cin 0.06fF
+C333 P3 xor_3/node 0.05fF
+C334 P3 vdd 0.06fF
+C335 gnd and_18/nand_0/y 0.03fF
+C336 G2 P0 0.54fF
+C337 P3 vdd 0.06fF
+C338 P3 or_5/y 0.05fF
+C339 and_5/nand_0/y vdd 0.48fF
+C340 Vdd xor_6/bnot 0.28fF
+C341 P3 vdd 0.06fF
+C342 P0 gnd 0.13fF
+C343 gnd P1 0.56fF
+C344 and_15/nand_0/y vdd 0.48fF
+C345 B3 xor_3/bnot 0.05fF
+C346 or_0/nor_0/y or_0/y 0.05fF
+C347 xor_1/bnot xor_1/node 0.23fF
+C348 xor_1/bnot xor_1/anot 0.05fF
+C349 or_9/a vdd 0.06fF
+C350 Vdd gnd 0.40fF
+C351 P3 vdd 0.17fF
+C352 vdd G1 0.28fF
+C353 or_7/a or_6/nor_0/y 0.05fF
+C354 vdd and_16/a 0.06fF
+C355 and_7/a P1 0.43fF
+C356 vdd or_3/b 0.28fF
+C357 and_17/nand_0/y G0 0.23fF
+C358 vdd and_12/a 0.28fF
+C359 or_6/a gnd 0.13fF
+C360 vdd or_2/a 0.06fF
+C361 Vdd xor_6/node 0.04fF
+C362 vdd P2 0.06fF
+C363 and_19/nand_0/y vdd 0.48fF
+C364 vdd P1 0.06fF
+C365 P3 Cin 0.54fF
+C366 B1 A1 1.50fF
+C367 G0 P0 3.16fF
+C368 or_9/a or_8/nor_0/y 0.05fF
+C369 and_1/nand_0/y A1 0.23fF
+C370 xor_3/node gnd 0.09fF
+C371 or_8/b and_23/nand_0/y 0.05fF
+C372 P3 gnd 0.14fF
+C373 G2 gnd 0.13fF
+C374 and_12/a and_12/nand_0/y 0.23fF
+C375 and_14/nand_0/y vdd 0.48fF
+C376 Cin vdd 0.06fF
+C377 or_0/a and_4/nand_0/y 0.05fF
+C378 and_23/a and_23/nand_0/y 0.23fF
+C379 gnd and_16/a 0.13fF
+C380 xor_2/anot A2 0.05fF
+C381 A0 Vdd 0.06fF
+C382 Vdd xor_3/bnot 0.28fF
+C383 xor_7/bnot xor_7/anot 0.05fF
+C384 Vdd xor_2/bnot 0.28fF
+C385 gnd or_8/a 0.13fF
+C386 gnd and_8/nand_0/y 0.03fF
+C387 and_10/nand_0/y or_3/b 0.05fF
+C388 P3 and_16/a 0.47fF
+C389 vdd and_13/a 0.06fF
+C390 gnd P1 0.04fF
+C391 G3 Cin 0.54fF
+C392 gnd P2 0.39fF
+C393 gnd or_2/a 0.13fF
+C394 P1 Cin 0.54fF
+C395 xor_6/anot P2 0.05fF
+C396 Cin P2 0.53fF
+C397 and_1/nand_0/y G1 0.05fF
+C398 xor_4/anot xor_4/node 0.03fF
+C399 xor_2/bnot xor_2/anot 0.05fF
+C400 B1 xor_1/bnot 0.05fF
+C401 and_20/nand_0/y and_21/a 0.05fF
+C402 xor_7/node xor_7/anot 0.03fF
+C403 vdd G0 0.28fF
+C404 and_12/nand_0/y and_13/a 0.05fF
+C405 gnd and_2/nand_0/y 0.03fF
+C406 xor_7/bnot xor_7/node 0.23fF
+C407 P3 G3 4.00fF
+C408 gnd P2 0.04fF
+C409 vdd or_5/a 0.06fF
+C410 or_6/nor_0/y gnd 0.21fF
+C411 xor_0/node Vdd 0.04fF
+C412 and_13/nand_0/y vdd 0.48fF
+C413 xor_3/node Vdd 0.06fF
+C414 P3 P1 0.87fF
+C415 B3 Vdd 0.06fF
+C416 P0 xor_0/node 0.05fF
+C417 P3 P2 4.21fF
+C418 gnd xor_2/anot 0.08fF
+C419 Vdd xor_1/node 0.04fF
+C420 vdd and_10/nand_0/y 0.48fF
+C421 or_9/a or_9/nor_0/y 0.13fF
+C422 vdd P2 0.06fF
+C423 vdd and_16/nand_0/y 0.48fF
+C424 P1 vdd 0.06fF
+C425 or_2/nor_0/y or_2/a 0.13fF
+C426 and_11/nand_0/y and_12/a 0.05fF
+C427 Vdd A2 0.06fF
+C428 C4 gnd 0.13fF
+C429 xor_4/anot gnd 0.13fF
+C430 vdd and_16/a 0.28fF
+C431 Vdd S3 0.28fF
+C432 and_23/nand_0/y gnd 0.03fF
+C433 Vdd gnd 0.40fF
+C434 gnd and_5/nand_0/y 0.03fF
+C435 xor_4/node Cin 0.22fF
+C436 A0 B0 0.66fF
+C437 and_15/nand_0/y G1 0.23fF
+C438 or_1/nor_0/y vdd 0.09fF
+C439 vdd and_18/a 0.06fF
+C440 gnd xor_4/bnot 0.13fF
+C441 A0 and_0/nand_0/y 0.23fF
+C442 vdd B3 0.06fF
+C443 G2 vdd 0.06fF
+C444 and_21/nand_0/y and_21/a 0.23fF
+C445 vdd and_3/nand_0/y 0.48fF
+C446 Vdd xor_4/bnot 0.28fF
+C447 Vdd P2 0.28fF
+C448 or_8/b or_8/a 0.62fF
+C449 or_3/nor_0/y vdd 0.09fF
+C450 S2 gnd 0.13fF
+C451 xor_5/anot P1 0.05fF
+C452 G3 P1 0.87fF
+C453 G3 P2 0.87fF
+C454 and_22/a and_21/nand_0/y 0.05fF
+C455 or_0/a gnd 0.13fF
+C456 vdd and_21/a 0.06fF
+C457 or_1/a or_1/b 0.55fF
+C458 or_8/nor_0/y gnd 0.21fF
+C459 B3 gnd 0.04fF
+C460 Vdd xor_0/anot 0.36fF
+C461 P1 P2 2.79fF
+C462 Vdd xor_7/bnot 0.28fF
+C463 or_6/a vdd 0.28fF
+C464 gnd and_3/nand_0/y 0.03fF
+C465 or_4/b and_13/nand_0/y 0.05fF
+C466 vdd and_22/a 0.28fF
+C467 P3 Vdd 0.28fF
+C468 xor_3/anot xor_3/bnot 0.05fF
+C469 vdd P2 0.06fF
+C470 P3 gnd 0.18fF
+C471 gnd G3 0.04fF
+C472 B2 vdd 0.06fF
+C473 and_22/nand_0/y vdd 0.48fF
+C474 gnd Vdd 0.40fF
+C475 and_16/nand_0/y and_16/a 0.23fF
+C476 P1 gnd 0.72fF
+C477 or_5/nor_0/y gnd 0.21fF
+C478 and_7/a vdd 0.06fF
+C479 gnd G1 0.13fF
+C480 and_18/a gnd 0.13fF
+C481 B1 Vdd 0.06fF
+C482 xor_5/node xor_5/anot 0.03fF
+C483 gnd and_13/a 0.13fF
+C484 G1 or_2/a 0.58fF
+C485 Vdd xor_7/node 0.04fF
+C486 xor_5/node Vdd 0.04fF
+C487 vdd and_21/a 0.28fF
+C488 gnd and_19/nand_0/y 0.03fF
+C489 or_5/nor_0/y or_5/a 0.13fF
+C490 or_7/a or_7/nor_0/y 0.13fF
+C491 vdd P0 0.06fF
+C492 or_2/nor_0/y vdd 0.09fF
+C493 and_22/nand_0/y and_22/a 0.23fF
+C494 xor_5/node P1 0.04fF
+C495 xor_0/bnot Vdd 0.28fF
+C496 xor_0/node xor_0/bnot 0.23fF
+C497 or_4/b or_4/a 0.57fF
+C498 Vdd xor_1/anot 0.36fF
+C499 A0 xor_0/anot 0.05fF
+C500 gnd P2 0.04fF
+C501 or_5/y gnd 0.13fF
+C502 G1 Cin 0.54fF
+C503 A2 vdd 0.06fF
+C504 and_19/a and_18/nand_0/y 0.05fF
+C505 gnd or_1/b 0.13fF
+C506 or_2/y vdd 0.28fF
+C507 vdd or_1/b 0.28fF
+C508 xor_5/bnot xor_5/anot 0.05fF
+C509 Vdd S1 0.28fF
+C510 and_23/nand_0/y vdd 0.48fF
+C511 xor_5/anot Vdd 0.36fF
+C512 P3 G1 0.43fF
+C513 xor_5/bnot Vdd 0.28fF
+C514 vdd and_18/nand_0/y 0.48fF
+C515 xor_6/node S2 0.05fF
+C516 vdd or_4/a 0.28fF
+C517 P1 vdd 0.06fF
+C518 Vdd P1 0.06fF
+C519 or_5/a gnd 0.19fF
+C520 Vdd xor_7/anot 0.36fF
+C521 Vdd S0 0.28fF
+C522 or_3/a vdd 0.28fF
+C523 vdd or_7/nor_0/y 0.09fF
+C524 B0 gnd 0.04fF
+C525 xor_6/bnot gnd 0.13fF
+C526 and_23/a gnd 0.13fF
+C527 B2 xor_2/node 0.22fF
+C528 P1 Vdd 0.28fF
+C529 gnd and_0/nand_0/y 0.03fF
+C530 gnd or_6/b 0.13fF
+C531 P3 vdd 0.06fF
+C532 G1 vdd 0.06fF
+C533 or_2/y P2 0.05fF
+C534 xor_1/anot xor_1/node 0.03fF
+C535 and_18/a P2 0.43fF
+C536 vdd Gnd 3.00fF
+C537 gnd Gnd 0.31fF
+C538 and_4/nand_0/y Gnd 0.35fF
+C539 vdd Gnd 3.00fF
+C540 A3 Gnd 1.07fF
+C541 B3 Gnd 1.79fF
+C542 gnd Gnd 0.31fF
+C543 and_3/nand_0/y Gnd 0.35fF
+C544 vdd Gnd 3.00fF
+C545 A2 Gnd 0.88fF
+C546 B2 Gnd 1.80fF
+C547 gnd Gnd 0.31fF
+C548 and_2/nand_0/y Gnd 0.35fF
+C549 vdd Gnd 3.00fF
+C550 A1 Gnd 1.06fF
+C551 B1 Gnd 1.84fF
+C552 gnd Gnd 0.31fF
+C553 and_1/nand_0/y Gnd 0.35fF
+C554 vdd Gnd 3.00fF
+C555 A0 Gnd 1.02fF
+C556 B0 Gnd 1.86fF
+C557 gnd Gnd 0.31fF
+C558 and_0/nand_0/y Gnd 0.35fF
+C559 vdd Gnd 3.00fF
+C560 gnd Gnd 0.31fF
+C561 or_7/b Gnd 0.44fF
+C562 and_19/nand_0/y Gnd 0.35fF
+C563 vdd Gnd 3.00fF
+C564 gnd Gnd 0.31fF
+C565 and_19/a Gnd 0.43fF
+C566 and_18/nand_0/y Gnd 0.35fF
+C567 vdd Gnd 3.00fF
+C568 gnd Gnd 0.31fF
+C569 and_18/a Gnd 0.43fF
+C570 and_17/nand_0/y Gnd 0.35fF
+C571 gnd Gnd 0.17fF
+C572 S3 Gnd 0.20fF
+C573 xor_7/node Gnd 1.96fF
+C574 Vdd Gnd 1.21fF
+C575 gnd Gnd 0.17fF
+C576 xor_7/bnot Gnd 0.30fF
+C577 or_5/y Gnd 0.85fF
+C578 Vdd Gnd 1.21fF
+C579 gnd Gnd 0.17fF
+C580 xor_7/anot Gnd 0.12fF
+C581 Vdd Gnd 1.21fF
+C582 vdd Gnd 3.00fF
+C583 gnd Gnd 0.31fF
+C584 or_6/b Gnd 0.67fF
+C585 and_16/nand_0/y Gnd 0.35fF
+C586 gnd Gnd 0.17fF
+C587 S2 Gnd 0.19fF
+C588 xor_6/node Gnd 1.96fF
+C589 Vdd Gnd 1.21fF
+C590 gnd Gnd 0.17fF
+C591 xor_6/bnot Gnd 0.30fF
+C592 or_2/y Gnd 0.71fF
+C593 Vdd Gnd 1.21fF
+C594 gnd Gnd 0.17fF
+C595 xor_6/anot Gnd 0.12fF
+C596 Vdd Gnd 1.21fF
+C597 vdd Gnd 3.00fF
+C598 gnd Gnd 0.31fF
+C599 and_16/a Gnd 0.43fF
+C600 and_15/nand_0/y Gnd 0.35fF
+C601 vdd Gnd 3.00fF
+C602 gnd Gnd 0.31fF
+C603 and_14/nand_0/y Gnd 0.35fF
+C604 gnd Gnd 0.17fF
+C605 S1 Gnd 0.19fF
+C606 xor_5/node Gnd 1.96fF
+C607 Vdd Gnd 1.21fF
+C608 gnd Gnd 0.17fF
+C609 xor_5/bnot Gnd 0.30fF
+C610 Vdd Gnd 1.21fF
+C611 gnd Gnd 0.17fF
+C612 xor_5/anot Gnd 0.12fF
+C613 Vdd Gnd 1.21fF
+C614 vdd Gnd 3.00fF
+C615 gnd Gnd 0.31fF
+C616 or_4/b Gnd 0.43fF
+C617 and_13/nand_0/y Gnd 0.35fF
+C618 gnd Gnd 0.17fF
+C619 S0 Gnd 0.19fF
+C620 xor_4/node Gnd 1.96fF
+C621 Vdd Gnd 1.21fF
+C622 gnd Gnd 0.17fF
+C623 xor_4/bnot Gnd 0.30fF
+C624 Vdd Gnd 1.21fF
+C625 gnd Gnd 0.17fF
+C626 xor_4/anot Gnd 0.12fF
+C627 Vdd Gnd 1.21fF
+C628 vdd Gnd 3.00fF
+C629 P3 Gnd 1.55fF
+C630 gnd Gnd 0.31fF
+C631 and_23/nand_0/y Gnd 0.35fF
+C632 vdd Gnd 3.05fF
+C633 gnd Gnd 0.34fF
+C634 or_9/nor_0/y Gnd 0.36fF
+C635 or_9/a Gnd 0.57fF
+C636 C4 Gnd 0.20fF
+C637 gnd Gnd 0.17fF
+C638 xor_3/node Gnd 1.96fF
+C639 Vdd Gnd 1.21fF
+C640 gnd Gnd 0.17fF
+C641 xor_3/bnot Gnd 0.30fF
+C642 Vdd Gnd 1.21fF
+C643 gnd Gnd 0.17fF
+C644 xor_3/anot Gnd 0.12fF
+C645 Vdd Gnd 1.21fF
+C646 vdd Gnd 3.00fF
+C647 gnd Gnd 0.31fF
+C648 and_13/a Gnd 0.44fF
+C649 and_12/nand_0/y Gnd 0.35fF
+C650 vdd Gnd 3.00fF
+C651 gnd Gnd 0.31fF
+C652 and_23/a Gnd 0.37fF
+C653 and_22/nand_0/y Gnd 0.35fF
+C654 vdd Gnd 3.05fF
+C655 gnd Gnd 0.34fF
+C656 or_8/nor_0/y Gnd 0.36fF
+C657 or_8/a Gnd 0.68fF
+C658 gnd Gnd 0.17fF
+C659 xor_2/node Gnd 1.96fF
+C660 Vdd Gnd 1.21fF
+C661 gnd Gnd 0.17fF
+C662 xor_2/bnot Gnd 0.30fF
+C663 Vdd Gnd 1.21fF
+C664 gnd Gnd 0.17fF
+C665 xor_2/anot Gnd 0.12fF
+C666 Vdd Gnd 1.21fF
+C667 vdd Gnd 3.00fF
+C668 gnd Gnd 0.31fF
+C669 and_12/a Gnd 0.44fF
+C670 and_11/nand_0/y Gnd 0.35fF
+C671 vdd Gnd 3.00fF
+C672 P1 Gnd 2.05fF
+C673 gnd Gnd 0.31fF
+C674 and_22/a Gnd 0.44fF
+C675 and_21/nand_0/y Gnd 0.35fF
+C676 vdd Gnd 3.05fF
+C677 gnd Gnd 0.34fF
+C678 or_7/nor_0/y Gnd 0.36fF
+C679 or_7/a Gnd 0.47fF
+C680 vdd Gnd 3.00fF
+C681 gnd Gnd 0.31fF
+C682 or_3/b Gnd 0.40fF
+C683 and_10/nand_0/y Gnd 0.35fF
+C684 gnd Gnd 0.17fF
+C685 xor_1/node Gnd 1.96fF
+C686 Vdd Gnd 1.21fF
+C687 gnd Gnd 0.17fF
+C688 xor_1/bnot Gnd 0.30fF
+C689 Vdd Gnd 1.21fF
+C690 gnd Gnd 0.17fF
+C691 xor_1/anot Gnd 0.12fF
+C692 Vdd Gnd 1.21fF
+C693 vdd Gnd 3.00fF
+C694 Cin Gnd 18.07fF
+C695 gnd Gnd 0.31fF
+C696 and_21/a Gnd 0.43fF
+C697 and_20/nand_0/y Gnd 0.35fF
+C698 vdd Gnd 3.05fF
+C699 gnd Gnd 0.34fF
+C700 or_6/nor_0/y Gnd 0.36fF
+C701 or_6/a Gnd 0.50fF
+C702 gnd Gnd 0.17fF
+C703 xor_0/node Gnd 1.96fF
+C704 Vdd Gnd 1.21fF
+C705 gnd Gnd 0.17fF
+C706 xor_0/bnot Gnd 0.30fF
+C707 Vdd Gnd 1.21fF
+C708 gnd Gnd 0.17fF
+C709 xor_0/anot Gnd 0.12fF
+C710 Vdd Gnd 1.21fF
+C711 vdd Gnd 3.05fF
+C712 gnd Gnd 0.34fF
+C713 or_5/nor_0/y Gnd 0.36fF
+C714 or_5/a Gnd 0.68fF
+C715 vdd Gnd 3.05fF
+C716 gnd Gnd 0.34fF
+C717 or_4/nor_0/y Gnd 0.36fF
+C718 or_4/a Gnd 0.68fF
+C719 vdd Gnd 3.05fF
+C720 gnd Gnd 0.34fF
+C721 or_3/nor_0/y Gnd 0.36fF
+C722 vdd Gnd 3.05fF
+C723 gnd Gnd 0.34fF
+C724 or_2/nor_0/y Gnd 0.36fF
+C725 vdd Gnd 3.05fF
+C726 gnd Gnd 0.34fF
+C727 or_1/nor_0/y Gnd 0.36fF
+C728 or_1/a Gnd 0.54fF
+C729 or_2/a Gnd 0.60fF
+C730 vdd Gnd 3.05fF
+C731 gnd Gnd 0.34fF
+C732 or_0/nor_0/y Gnd 0.36fF
+C733 or_0/a Gnd 0.58fF
+C734 or_0/y Gnd 0.76fF
+C735 vdd Gnd 3.00fF
+C736 gnd Gnd 0.31fF
+C737 and_9/y Gnd 0.42fF
+C738 and_9/nand_0/y Gnd 0.35fF
+C739 vdd Gnd 3.00fF
+C740 gnd Gnd 0.31fF
+C741 or_3/a Gnd 0.20fF
+C742 and_8/nand_0/y Gnd 0.35fF
+C743 vdd Gnd 3.00fF
+C744 gnd Gnd 0.31fF
+C745 and_7/a Gnd 0.43fF
+C746 and_6/nand_0/y Gnd 0.35fF
+C747 vdd Gnd 3.00fF
+C748 gnd Gnd 0.31fF
+C749 or_1/b Gnd 0.55fF
+C750 and_7/nand_0/y Gnd 0.35fF
+C751 vdd Gnd 3.00fF
+C752 gnd Gnd 0.31fF
+C753 and_5/nand_0/y Gnd 0.35fF
+
+
+.tran 0.01n 10n 
+
+.control
+run
+* set background & foreground color
+set color0 = white 
+set color1 = black
+set curplottitle = "Harshit Goyal - 2023102054"
+
+* plot the waveforms
+* plot C4 2+S3 4+S2 6+S1 8+S0 10+B3 12+B2 14+B1 16+B0 18+A3 20+A2 22+A1 24+A0 26+Cin
+
+.endc
+
+* propogation delay for each bit
+
+* propogation delay for S0
+.measure tran tpdrS0
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S0) val={0.5*Supply} rise=1
+
+.measure tran tpdfS0
++ trig v(A0) val={0.5*Supply} fall=2
++ targ v(S0) val={0.5*Supply} fall=2
+
+.measure tran tpdS0 param='(tpdrS0+tpdfS0)/2'
+
+* propogation delay for S1
+.measure tran tpdrS1
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S1) val={0.5*Supply} rise=1
+
+.measure tran tpdfS1
++ trig v(A0) val={0.5*Supply} fall=2
++ targ v(S1) val={0.5*Supply} fall=2
+
+.measure tran tpdS1 param='(tpdrS1+tpdfS1)/2'
+
+* propogation delay for S2
+.measure tran tpdrS2
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S2) val={0.5*Supply} rise=1
+
+.measure tran tpdfS2
++ trig v(A0) val={0.5*Supply} fall=2
++ targ v(S2) val={0.5*Supply} fall=2
+
+.measure tran tpdS2 param='(tpdrS2+tpdfS2)/2'
+
+* propogation delay for S3
+.measure tran tpdrS3
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S3) val={0.5*Supply} rise=1
+
+.measure tran tpdfS3
++ trig v(A0) val={0.5*Supply} fall=2
++ targ v(S3) val={0.5*Supply} fall=2
+
+.measure tran tpdS3 param='(tpdrS3+tpdfS3)/2'
+
+* propogation delay for C4
+.measure tran tpdrCout
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(C4) val={0.5*Supply} fall=1
+
+.measure tran tpdfCout
++ trig v(A0) val={0.5*Supply} fall=2
++ targ v(C4) val={0.5*Supply} rise=2
+
+.measure tran tpdCout param='(tpdrCout+tpdfCout)/2'
+
+.end

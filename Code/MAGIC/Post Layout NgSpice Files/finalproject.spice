@@ -1,0 +1,2083 @@
+* Harshit Goyal 2023102054
+* SPICE3 file created from finalproject.ext - technology: scmos
+
+.option scale=0.09u
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.global gnd vdd
+
+Vdd vdd gnd {SUPPLY}
+
+* vinv v gnd pulse Vlow vhigh delay rise fall onperiod period
+vinclk clk gnd pulse 0 1.8 0.9ns 0ns 0ns 1ns 2.0ns
+
+VinA0 A0 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA1 A1 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA2 A2 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA3 A3 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+
+VinB0 B0 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB1 B1 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB2 B2 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB3 B3 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+VinCin Cin gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+M1000 Dff_2/q1 clk Dff_2/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1001 Dff_2/qnot Dff_2/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1002 Dff_2/a_6_6# B0 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1003 Dff_2/b clk Dff_2/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1004 Dff_2/a_47_6# Dff_2/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 Dff_2/b B0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1006 Dff_2/a clk Dff_2/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1007 B0d Dff_2/qnot gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1008 Dff_2/q2 clk Dff_2/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1009 Dff_2/a_131_15# Dff_2/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 B0d Dff_2/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1011 Dff_2/a Dff_2/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1012 Dff_2/qnot Dff_2/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1013 Dff_2/q1 Dff_2/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1014 Dff_2/q2 Dff_2/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1015 Dff_2/a_90_15# Dff_2/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 Dff_3/q1 clk Dff_3/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1017 Dff_3/qnot Dff_3/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1018 Dff_3/a_6_6# A1 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1019 Dff_3/b clk Dff_3/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1020 Dff_3/a_47_6# Dff_3/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 Dff_3/b A1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1022 Dff_3/a clk Dff_3/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1023 A1d Dff_3/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1024 Dff_3/q2 clk Dff_3/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1025 Dff_3/a_131_15# Dff_3/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 A1d Dff_3/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1027 Dff_3/a Dff_3/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1028 Dff_3/qnot Dff_3/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1029 Dff_3/q1 Dff_3/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1030 Dff_3/q2 Dff_3/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1031 Dff_3/a_90_15# Dff_3/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 inverter_0/OUT S0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1033 inverter_0/OUT S0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1034 Dff_4/q1 clk Dff_4/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1035 Dff_4/qnot Dff_4/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1036 Dff_4/a_6_6# B1 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1037 Dff_4/b clk Dff_4/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1038 Dff_4/a_47_6# Dff_4/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1039 Dff_4/b B1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1040 Dff_4/a clk Dff_4/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1041 B1d Dff_4/qnot gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1042 Dff_4/q2 clk Dff_4/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1043 Dff_4/a_131_15# Dff_4/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1044 B1d Dff_4/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1045 Dff_4/a Dff_4/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1046 Dff_4/qnot Dff_4/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1047 Dff_4/q1 Dff_4/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1048 Dff_4/q2 Dff_4/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1049 Dff_4/a_90_15# Dff_4/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 inverter_1/OUT S1 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1051 inverter_1/OUT S1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1052 Dff_5/q1 clk Dff_5/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1053 Dff_5/qnot Dff_5/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1054 Dff_5/a_6_6# A2 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1055 Dff_5/b clk Dff_5/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1056 Dff_5/a_47_6# Dff_5/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1057 Dff_5/b A2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1058 Dff_5/a clk Dff_5/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1059 A2d Dff_5/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1060 Dff_5/q2 clk Dff_5/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1061 Dff_5/a_131_15# Dff_5/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 A2d Dff_5/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1063 Dff_5/a Dff_5/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1064 Dff_5/qnot Dff_5/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1065 Dff_5/q1 Dff_5/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1066 Dff_5/q2 Dff_5/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1067 Dff_5/a_90_15# Dff_5/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1068 inverter_2/OUT S2 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1069 inverter_2/OUT S2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1070 Dff_7/q1 clk Dff_7/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1071 Dff_7/qnot Dff_7/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1072 Dff_7/a_6_6# A3 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1073 Dff_7/b clk Dff_7/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1074 Dff_7/a_47_6# Dff_7/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1075 Dff_7/b A3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1076 Dff_7/a clk Dff_7/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1077 A3d Dff_7/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1078 Dff_7/q2 clk Dff_7/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1079 Dff_7/a_131_15# Dff_7/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1080 A3d Dff_7/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1081 Dff_7/a Dff_7/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1082 Dff_7/qnot Dff_7/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1083 Dff_7/q1 Dff_7/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1084 Dff_7/q2 Dff_7/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1085 Dff_7/a_90_15# Dff_7/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1086 Dff_6/q1 clk Dff_6/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1087 Dff_6/qnot Dff_6/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1088 Dff_6/a_6_6# B2 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1089 Dff_6/b clk Dff_6/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1090 Dff_6/a_47_6# Dff_6/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1091 Dff_6/b B2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1092 Dff_6/a clk Dff_6/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1093 B2d Dff_6/qnot gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1094 Dff_6/q2 clk Dff_6/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1095 Dff_6/a_131_15# Dff_6/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 B2d Dff_6/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1097 Dff_6/a Dff_6/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1098 Dff_6/qnot Dff_6/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1099 Dff_6/q1 Dff_6/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1100 Dff_6/q2 Dff_6/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1101 Dff_6/a_90_15# Dff_6/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1102 inverter_3/OUT S3 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1103 inverter_3/OUT S3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1104 Dff_8/q1 clk Dff_8/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1105 Dff_8/qnot Dff_8/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1106 Dff_8/a_6_6# B3 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1107 Dff_8/b clk Dff_8/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1108 Dff_8/a_47_6# Dff_8/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1109 Dff_8/b B3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1110 Dff_8/a clk Dff_8/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1111 B3d Dff_8/qnot gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1112 Dff_8/q2 clk Dff_8/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1113 Dff_8/a_131_15# Dff_8/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1114 B3d Dff_8/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1115 Dff_8/a Dff_8/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1116 Dff_8/qnot Dff_8/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1117 Dff_8/q1 Dff_8/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1118 Dff_8/q2 Dff_8/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1119 Dff_8/a_90_15# Dff_8/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1120 Dff_9/q1 clk Dff_9/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1121 Dff_9/qnot Dff_9/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1122 Dff_9/a_6_6# Dff_9/d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1123 Dff_9/b clk Dff_9/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1124 Dff_9/a_47_6# Dff_9/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1125 Dff_9/b Dff_9/d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1126 Dff_9/a clk Dff_9/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1127 S0 Dff_9/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1128 Dff_9/q2 clk Dff_9/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1129 Dff_9/a_131_15# Dff_9/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1130 S0 Dff_9/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1131 Dff_9/a Dff_9/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1132 Dff_9/qnot Dff_9/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1133 Dff_9/q1 Dff_9/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1134 Dff_9/q2 Dff_9/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1135 Dff_9/a_90_15# Dff_9/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1136 inverter_4/OUT Cout Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1137 inverter_4/OUT Cout gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1138 Dff_10/q1 clk Dff_10/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1139 Dff_10/qnot Dff_10/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1140 Dff_10/a_6_6# Dff_10/d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1141 Dff_10/b clk Dff_10/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1142 Dff_10/a_47_6# Dff_10/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1143 Dff_10/b Dff_10/d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1144 Dff_10/a clk Dff_10/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1145 S1 Dff_10/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1146 Dff_10/q2 clk Dff_10/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1147 Dff_10/a_131_15# Dff_10/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1148 S1 Dff_10/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1149 Dff_10/a Dff_10/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1150 Dff_10/qnot Dff_10/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1151 Dff_10/q1 Dff_10/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1152 Dff_10/q2 Dff_10/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1153 Dff_10/a_90_15# Dff_10/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1154 Dff_11/q1 clk Dff_11/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1155 Dff_11/qnot Dff_11/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1156 Dff_11/a_6_6# Dff_11/d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1157 Dff_11/b clk Dff_11/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1158 Dff_11/a_47_6# Dff_11/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1159 Dff_11/b Dff_11/d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1160 Dff_11/a clk Dff_11/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1161 S2 Dff_11/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1162 Dff_11/q2 clk Dff_11/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1163 Dff_11/a_131_15# Dff_11/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1164 S2 Dff_11/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1165 Dff_11/a Dff_11/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1166 Dff_11/qnot Dff_11/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1167 Dff_11/q1 Dff_11/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1168 Dff_11/q2 Dff_11/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1169 Dff_11/a_90_15# Dff_11/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1170 Dff_12/q1 clk Dff_12/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1171 Dff_12/qnot Dff_12/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1172 Dff_12/a_6_6# Dff_12/d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1173 Dff_12/b clk Dff_12/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1174 Dff_12/a_47_6# Dff_12/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1175 Dff_12/b Dff_12/d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1176 Dff_12/a clk Dff_12/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1177 S3 Dff_12/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1178 Dff_12/q2 clk Dff_12/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1179 Dff_12/a_131_15# Dff_12/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1180 S3 Dff_12/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1181 Dff_12/a Dff_12/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1182 Dff_12/qnot Dff_12/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1183 Dff_12/q1 Dff_12/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1184 Dff_12/q2 Dff_12/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1185 Dff_12/a_90_15# Dff_12/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1186 Dff_13/q1 clk Dff_13/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1187 Dff_13/qnot Dff_13/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1188 Dff_13/a_6_6# Dff_13/d vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1189 Dff_13/b clk Dff_13/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1190 Dff_13/a_47_6# Dff_13/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1191 Dff_13/b Dff_13/d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1192 Dff_13/a clk Dff_13/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1193 Cout Dff_13/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1194 Dff_13/q2 clk Dff_13/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1195 Dff_13/a_131_15# Dff_13/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1196 Cout Dff_13/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1197 Dff_13/a Dff_13/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1198 Dff_13/qnot Dff_13/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1199 Dff_13/q1 Dff_13/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1200 Dff_13/q2 Dff_13/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1201 Dff_13/a_90_15# Dff_13/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1202 final4bitCLA_0/CLA_0/C0 final4bitCLA_0/CLA_0/or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1203 final4bitCLA_0/CLA_0/C0 final4bitCLA_0/CLA_0/or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1204 final4bitCLA_0/CLA_0/or_0/nor_0/a_65_6# final4bitCLA_0/CLA_0/G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1205 final4bitCLA_0/CLA_0/or_0/nor_0/y final4bitCLA_0/CLA_0/G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1206 gnd final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1207 final4bitCLA_0/CLA_0/or_0/nor_0/y final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1208 final4bitCLA_0/CLA_0/xor_0/anot A0d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1209 final4bitCLA_0/CLA_0/xor_0/anot A0d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1210 final4bitCLA_0/CLA_0/xor_0/bnot B0d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1211 final4bitCLA_0/CLA_0/xor_0/bnot B0d gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1212 final4bitCLA_0/CLA_0/P0 final4bitCLA_0/CLA_0/xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1213 final4bitCLA_0/CLA_0/P0 final4bitCLA_0/CLA_0/xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1214 final4bitCLA_0/CLA_0/xor_0/node A0d B0d Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1215 final4bitCLA_0/CLA_0/xor_0/node final4bitCLA_0/CLA_0/xor_0/anot final4bitCLA_0/CLA_0/xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1216 final4bitCLA_0/CLA_0/xor_1/anot final4bitCLA_0/CLA_0/P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1217 final4bitCLA_0/CLA_0/xor_1/anot final4bitCLA_0/CLA_0/P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1218 final4bitCLA_0/CLA_0/xor_1/bnot Cind Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1219 final4bitCLA_0/CLA_0/xor_1/bnot Cind gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1220 Dff_9/d final4bitCLA_0/CLA_0/xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1221 Dff_9/d final4bitCLA_0/CLA_0/xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1222 final4bitCLA_0/CLA_0/xor_1/node final4bitCLA_0/CLA_0/P0 Cind Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=100 ps=60
+M1223 final4bitCLA_0/CLA_0/xor_1/node final4bitCLA_0/CLA_0/xor_1/anot final4bitCLA_0/CLA_0/xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1224 final4bitCLA_0/CLA_0/G0 final4bitCLA_0/CLA_0/and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1225 final4bitCLA_0/CLA_0/G0 final4bitCLA_0/CLA_0/and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1226 vdd A0d final4bitCLA_0/CLA_0/and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1227 final4bitCLA_0/CLA_0/and_0/nand_0/a_57_n34# B0d gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1228 final4bitCLA_0/CLA_0/and_0/nand_0/y A0d final4bitCLA_0/CLA_0/and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1229 final4bitCLA_0/CLA_0/and_0/nand_0/y B0d vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1230 final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1231 final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1232 vdd final4bitCLA_0/CLA_0/P0 final4bitCLA_0/CLA_0/and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1233 final4bitCLA_0/CLA_0/and_1/nand_0/a_57_n34# Cind gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1234 final4bitCLA_0/CLA_0/and_1/nand_0/y final4bitCLA_0/CLA_0/P0 final4bitCLA_0/CLA_0/and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1235 final4bitCLA_0/CLA_0/and_1/nand_0/y Cind vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1236 final4bitCLA_0/CLA_1/C0 final4bitCLA_0/CLA_1/or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1237 final4bitCLA_0/CLA_1/C0 final4bitCLA_0/CLA_1/or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1238 final4bitCLA_0/CLA_1/or_0/nor_0/a_65_6# final4bitCLA_0/CLA_1/G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1239 final4bitCLA_0/CLA_1/or_0/nor_0/y final4bitCLA_0/CLA_1/G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1240 gnd final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1241 final4bitCLA_0/CLA_1/or_0/nor_0/y final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1242 final4bitCLA_0/CLA_1/xor_0/anot A1d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1243 final4bitCLA_0/CLA_1/xor_0/anot A1d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1244 final4bitCLA_0/CLA_1/xor_0/bnot B1d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1245 final4bitCLA_0/CLA_1/xor_0/bnot B1d gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1246 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1247 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1248 final4bitCLA_0/CLA_1/xor_0/node A1d B1d Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1249 final4bitCLA_0/CLA_1/xor_0/node final4bitCLA_0/CLA_1/xor_0/anot final4bitCLA_0/CLA_1/xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1250 final4bitCLA_0/CLA_1/xor_1/anot final4bitCLA_0/CLA_1/P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1251 final4bitCLA_0/CLA_1/xor_1/anot final4bitCLA_0/CLA_1/P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1252 final4bitCLA_0/CLA_1/xor_1/bnot final4bitCLA_0/CLA_0/C0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1253 final4bitCLA_0/CLA_1/xor_1/bnot final4bitCLA_0/CLA_0/C0 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1254 Dff_10/d final4bitCLA_0/CLA_1/xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1255 Dff_10/d final4bitCLA_0/CLA_1/xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1256 final4bitCLA_0/CLA_1/xor_1/node final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_0/C0 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1257 final4bitCLA_0/CLA_1/xor_1/node final4bitCLA_0/CLA_1/xor_1/anot final4bitCLA_0/CLA_1/xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1258 final4bitCLA_0/CLA_1/G0 final4bitCLA_0/CLA_1/and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1259 final4bitCLA_0/CLA_1/G0 final4bitCLA_0/CLA_1/and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1260 vdd A1d final4bitCLA_0/CLA_1/and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1261 final4bitCLA_0/CLA_1/and_0/nand_0/a_57_n34# B1d gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1262 final4bitCLA_0/CLA_1/and_0/nand_0/y A1d final4bitCLA_0/CLA_1/and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1263 final4bitCLA_0/CLA_1/and_0/nand_0/y B1d vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1264 final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1265 final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1266 vdd final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1267 final4bitCLA_0/CLA_1/and_1/nand_0/a_57_n34# final4bitCLA_0/CLA_0/C0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1268 final4bitCLA_0/CLA_1/and_1/nand_0/y final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1269 final4bitCLA_0/CLA_1/and_1/nand_0/y final4bitCLA_0/CLA_0/C0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1270 final4bitCLA_0/CLA_2/C0 final4bitCLA_0/CLA_2/or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1271 final4bitCLA_0/CLA_2/C0 final4bitCLA_0/CLA_2/or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=200 ps=100
+M1272 final4bitCLA_0/CLA_2/or_0/nor_0/a_65_6# final4bitCLA_0/CLA_2/G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1273 final4bitCLA_0/CLA_2/or_0/nor_0/y final4bitCLA_0/CLA_2/G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1274 gnd final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1275 final4bitCLA_0/CLA_2/or_0/nor_0/y final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1276 final4bitCLA_0/CLA_2/xor_0/anot A2d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1277 final4bitCLA_0/CLA_2/xor_0/anot A2d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1278 final4bitCLA_0/CLA_2/xor_0/bnot B2d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1279 final4bitCLA_0/CLA_2/xor_0/bnot B2d gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1280 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1281 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1282 final4bitCLA_0/CLA_2/xor_0/node A2d B2d Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1283 final4bitCLA_0/CLA_2/xor_0/node final4bitCLA_0/CLA_2/xor_0/anot final4bitCLA_0/CLA_2/xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1284 final4bitCLA_0/CLA_2/xor_1/anot final4bitCLA_0/CLA_2/P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1285 final4bitCLA_0/CLA_2/xor_1/anot final4bitCLA_0/CLA_2/P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1286 final4bitCLA_0/CLA_2/xor_1/bnot final4bitCLA_0/CLA_1/C0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1287 final4bitCLA_0/CLA_2/xor_1/bnot final4bitCLA_0/CLA_1/C0 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1288 Dff_11/d final4bitCLA_0/CLA_2/xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1289 Dff_11/d final4bitCLA_0/CLA_2/xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1290 final4bitCLA_0/CLA_2/xor_1/node final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_1/C0 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1291 final4bitCLA_0/CLA_2/xor_1/node final4bitCLA_0/CLA_2/xor_1/anot final4bitCLA_0/CLA_2/xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1292 final4bitCLA_0/CLA_2/G0 final4bitCLA_0/CLA_2/and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1293 final4bitCLA_0/CLA_2/G0 final4bitCLA_0/CLA_2/and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1294 vdd A2d final4bitCLA_0/CLA_2/and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1295 final4bitCLA_0/CLA_2/and_0/nand_0/a_57_n34# B2d gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1296 final4bitCLA_0/CLA_2/and_0/nand_0/y A2d final4bitCLA_0/CLA_2/and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1297 final4bitCLA_0/CLA_2/and_0/nand_0/y B2d vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1298 final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1299 final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1300 vdd final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1301 final4bitCLA_0/CLA_2/and_1/nand_0/a_57_n34# final4bitCLA_0/CLA_1/C0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1302 final4bitCLA_0/CLA_2/and_1/nand_0/y final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1303 final4bitCLA_0/CLA_2/and_1/nand_0/y final4bitCLA_0/CLA_1/C0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1304 Dff_13/d final4bitCLA_0/CLA_3/or_0/nor_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=220 ps=102
+M1305 Dff_13/d final4bitCLA_0/CLA_3/or_0/nor_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=100
+M1306 final4bitCLA_0/CLA_3/or_0/nor_0/a_65_6# final4bitCLA_0/CLA_3/G0 vdd vdd CMOSP w=20 l=2
++  ad=120 pd=52 as=0 ps=0
+M1307 final4bitCLA_0/CLA_3/or_0/nor_0/y final4bitCLA_0/CLA_3/G0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1308 gnd final4bitCLA_0/CLA_3/or_0/a final4bitCLA_0/CLA_3/or_0/nor_0/y Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1309 final4bitCLA_0/CLA_3/or_0/nor_0/y final4bitCLA_0/CLA_3/or_0/a final4bitCLA_0/CLA_3/or_0/nor_0/a_65_6# vdd CMOSP w=20 l=2
++  ad=180 pd=58 as=0 ps=0
+M1310 final4bitCLA_0/CLA_3/xor_0/anot A3d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1311 final4bitCLA_0/CLA_3/xor_0/anot A3d gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1312 final4bitCLA_0/CLA_3/xor_0/bnot B3d Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1313 final4bitCLA_0/CLA_3/xor_0/bnot B3d gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1314 final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/xor_0/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1315 final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/xor_0/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1316 final4bitCLA_0/CLA_3/xor_0/node A3d B3d Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1317 final4bitCLA_0/CLA_3/xor_0/node final4bitCLA_0/CLA_3/xor_0/anot final4bitCLA_0/CLA_3/xor_0/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1318 final4bitCLA_0/CLA_3/xor_1/anot final4bitCLA_0/CLA_3/P0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1319 final4bitCLA_0/CLA_3/xor_1/anot final4bitCLA_0/CLA_3/P0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1320 final4bitCLA_0/CLA_3/xor_1/bnot final4bitCLA_0/CLA_2/C0 Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1321 final4bitCLA_0/CLA_3/xor_1/bnot final4bitCLA_0/CLA_2/C0 gnd Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=50 ps=30
+M1322 Dff_12/d final4bitCLA_0/CLA_3/xor_1/node Vdd Vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1323 Dff_12/d final4bitCLA_0/CLA_3/xor_1/node gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1324 final4bitCLA_0/CLA_3/xor_1/node final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_2/C0 Gnd CMOSN w=10 l=2
++  ad=100 pd=60 as=0 ps=0
+M1325 final4bitCLA_0/CLA_3/xor_1/node final4bitCLA_0/CLA_3/xor_1/anot final4bitCLA_0/CLA_3/xor_1/bnot Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1326 final4bitCLA_0/CLA_3/G0 final4bitCLA_0/CLA_3/and_0/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1327 final4bitCLA_0/CLA_3/G0 final4bitCLA_0/CLA_3/and_0/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1328 vdd A3d final4bitCLA_0/CLA_3/and_0/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1329 final4bitCLA_0/CLA_3/and_0/nand_0/a_57_n34# B3d gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1330 final4bitCLA_0/CLA_3/and_0/nand_0/y A3d final4bitCLA_0/CLA_3/and_0/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1331 final4bitCLA_0/CLA_3/and_0/nand_0/y B3d vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1332 final4bitCLA_0/CLA_3/or_0/a final4bitCLA_0/CLA_3/and_1/nand_0/y vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=360 ps=156
+M1333 final4bitCLA_0/CLA_3/or_0/a final4bitCLA_0/CLA_3/and_1/nand_0/y gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=110 ps=62
+M1334 vdd final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/and_1/nand_0/y vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=120 ps=52
+M1335 final4bitCLA_0/CLA_3/and_1/nand_0/a_57_n34# final4bitCLA_0/CLA_2/C0 gnd Gnd CMOSN w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1336 final4bitCLA_0/CLA_3/and_1/nand_0/y final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/and_1/nand_0/a_57_n34# Gnd CMOSN w=10 l=2
++  ad=80 pd=36 as=0 ps=0
+M1337 final4bitCLA_0/CLA_3/and_1/nand_0/y final4bitCLA_0/CLA_2/C0 vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1338 Dff_0/q1 clk Dff_0/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1339 Dff_0/qnot Dff_0/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1340 Dff_0/a_6_6# Cin vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1341 Dff_0/b clk Dff_0/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1342 Dff_0/a_47_6# Dff_0/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1343 Dff_0/b Cin gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1344 Dff_0/a clk Dff_0/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1345 Cind Dff_0/qnot gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1346 Dff_0/q2 clk Dff_0/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1347 Dff_0/a_131_15# Dff_0/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1348 Cind Dff_0/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1349 Dff_0/a Dff_0/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1350 Dff_0/qnot Dff_0/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1351 Dff_0/q1 Dff_0/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1352 Dff_0/q2 Dff_0/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1353 Dff_0/a_90_15# Dff_0/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1354 Dff_1/q1 clk Dff_1/a_47_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1355 Dff_1/qnot Dff_1/q2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1356 Dff_1/a_6_6# A0 vdd vdd CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1357 Dff_1/b clk Dff_1/a_6_6# vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1358 Dff_1/a_47_6# Dff_1/b vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1359 Dff_1/b A0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=300 ps=180
+M1360 Dff_1/a clk Dff_1/a_90_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1361 A0d Dff_1/qnot gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1362 Dff_1/q2 clk Dff_1/a_131_15# Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=100 ps=60
+M1363 Dff_1/a_131_15# Dff_1/a gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1364 A0d Dff_1/qnot vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1365 Dff_1/a Dff_1/q1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1366 Dff_1/qnot Dff_1/q2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1367 Dff_1/q1 Dff_1/b gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1368 Dff_1/q2 Dff_1/a vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1369 Dff_1/a_90_15# Dff_1/q1 gnd Gnd CMOSN w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 Vdd final4bitCLA_0/CLA_0/xor_1/anot 0.36fF
+C1 Dff_10/qnot gnd 0.19fF
+C2 final4bitCLA_0/CLA_3/xor_1/bnot final4bitCLA_0/CLA_3/xor_1/anot 0.05fF
+C3 final4bitCLA_0/CLA_0/xor_0/bnot B0d 0.05fF
+C4 gnd Dff_13/a 0.05fF
+C5 Dff_13/a_131_15# Dff_13/q2 0.10fF
+C6 final4bitCLA_0/CLA_1/G0 final4bitCLA_0/CLA_1/or_0/a 0.48fF
+C7 gnd S2 0.13fF
+C8 final4bitCLA_0/CLA_1/or_0/a vdd 0.06fF
+C9 vdd final4bitCLA_0/CLA_1/C0 0.28fF
+C10 gnd Cind 0.04fF
+C11 gnd final4bitCLA_0/CLA_3/xor_0/anot 0.08fF
+C12 final4bitCLA_0/CLA_0/C0 gnd 0.04fF
+C13 Dff_6/a_90_15# Dff_6/q1 0.11fF
+C14 clk Dff_13/q1 0.32fF
+C15 vdd clk 0.29fF
+C16 Dff_4/b clk 0.39fF
+C17 gnd Dff_4/q1 0.16fF
+C18 final4bitCLA_0/CLA_3/xor_0/anot gnd 0.13fF
+C19 final4bitCLA_0/CLA_1/P0 vdd 0.06fF
+C20 final4bitCLA_0/CLA_0/and_0/nand_0/y vdd 0.48fF
+C21 Dff_13/d gnd 0.05fF
+C22 Dff_7/a_90_15# clk 0.05fF
+C23 vdd Dff_7/a_6_6# 0.37fF
+C24 Dff_8/b Dff_8/q1 0.05fF
+C25 A1d Vdd 0.06fF
+C26 final4bitCLA_0/CLA_1/xor_1/bnot final4bitCLA_0/CLA_1/xor_1/node 0.23fF
+C27 gnd B3 0.05fF
+C28 Dff_4/q1 Dff_4/a_90_15# 0.11fF
+C29 Dff_3/b Dff_3/a_47_6# 0.10fF
+C30 final4bitCLA_0/CLA_2/or_0/a vdd 0.06fF
+C31 Cind final4bitCLA_0/CLA_0/P0 0.76fF
+C32 Dff_5/a_131_15# clk 0.05fF
+C33 Dff_12/a_6_6# clk 0.05fF
+C34 clk vdd 0.29fF
+C35 Dff_0/a_6_6# vdd 0.37fF
+C36 final4bitCLA_0/CLA_0/xor_0/node gnd 0.09fF
+C37 final4bitCLA_0/CLA_3/xor_1/node Dff_12/d 0.05fF
+C38 clk Dff_12/b 0.39fF
+C39 vdd Dff_10/b 0.24fF
+C40 gnd clk 1.43fF
+C41 Dff_4/a_131_15# gnd 0.10fF
+C42 gnd final4bitCLA_0/CLA_0/xor_1/anot 0.08fF
+C43 final4bitCLA_0/CLA_3/and_0/nand_0/y final4bitCLA_0/CLA_3/G0 0.05fF
+C44 final4bitCLA_0/CLA_2/C0 final4bitCLA_0/CLA_2/or_0/nor_0/y 0.05fF
+C45 clk Dff_6/b 0.39fF
+C46 inverter_3/OUT gnd 0.13fF
+C47 final4bitCLA_0/CLA_0/G0 vdd 0.28fF
+C48 clk Dff_10/b 0.39fF
+C49 final4bitCLA_0/CLA_2/and_0/nand_0/y gnd 0.03fF
+C50 vdd Dff_10/a_47_6# 0.37fF
+C51 Dff_12/a clk 0.32fF
+C52 Dff_6/a gnd 0.05fF
+C53 Dff_7/q2 gnd 0.05fF
+C54 Dff_0/a_6_6# clk 0.05fF
+C55 clk Dff_13/a 0.32fF
+C56 Cout vdd 0.29fF
+C57 Dff_0/b Dff_0/a_47_6# 0.10fF
+C58 final4bitCLA_0/CLA_2/G0 gnd 0.05fF
+C59 final4bitCLA_0/CLA_2/P0 gnd 0.19fF
+C60 A0 gnd 0.05fF
+C61 Dff_1/q1 Dff_1/a_90_15# 0.11fF
+C62 Dff_10/a_47_6# clk 0.05fF
+C63 final4bitCLA_0/CLA_0/xor_0/node final4bitCLA_0/CLA_0/P0 0.05fF
+C64 final4bitCLA_0/CLA_1/P0 Vdd 0.06fF
+C65 final4bitCLA_0/CLA_0/xor_0/node A0d 0.04fF
+C66 Dff_8/a_131_15# Dff_8/a 0.11fF
+C67 Dff_13/d clk 0.32fF
+C68 inverter_2/OUT gnd 0.13fF
+C69 vdd Dff_3/a_47_6# 0.37fF
+C70 final4bitCLA_0/CLA_1/G0 vdd 0.28fF
+C71 gnd S3 0.13fF
+C72 gnd clk 1.43fF
+C73 final4bitCLA_0/CLA_1/xor_1/node final4bitCLA_0/CLA_1/xor_1/anot 0.03fF
+C74 final4bitCLA_0/CLA_0/xor_0/bnot gnd 0.13fF
+C75 final4bitCLA_0/CLA_2/xor_0/anot final4bitCLA_0/CLA_2/xor_0/node 0.03fF
+C76 Dff_9/a Dff_9/q2 0.05fF
+C77 vdd S0 0.29fF
+C78 final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/or_0/nor_0/y 0.13fF
+C79 final4bitCLA_0/CLA_1/or_0/nor_0/y final4bitCLA_0/CLA_1/C0 0.05fF
+C80 final4bitCLA_0/CLA_0/xor_1/node final4bitCLA_0/CLA_0/P0 0.04fF
+C81 vdd clk 0.29fF
+C82 vdd Dff_8/a_47_6# 0.37fF
+C83 clk Dff_4/a_90_15# 0.05fF
+C84 final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/G0 0.48fF
+C85 vdd Dff_6/a_47_6# 0.37fF
+C86 Dff_7/a clk 0.32fF
+C87 gnd clk 1.43fF
+C88 gnd Cind 0.13fF
+C89 vdd Dff_12/qnot 0.36fF
+C90 Dff_5/q1 Dff_5/b 0.05fF
+C91 Dff_2/a_47_6# clk 0.05fF
+C92 Dff_3/q2 Dff_3/a_131_15# 0.10fF
+C93 A1d vdd 0.06fF
+C94 Dff_9/q1 Dff_9/a 0.05fF
+C95 A2d final4bitCLA_0/CLA_2/xor_0/node 0.04fF
+C96 Dff_11/q1 Dff_11/a_90_15# 0.11fF
+C97 final4bitCLA_0/CLA_0/C0 final4bitCLA_0/CLA_0/or_0/nor_0/y 0.05fF
+C98 Dff_1/q1 Dff_1/a 0.05fF
+C99 vdd Dff_1/a_6_6# 0.37fF
+C100 Dff_0/q2 Dff_0/qnot 0.05fF
+C101 Dff_10/a_90_15# Dff_10/q1 0.11fF
+C102 Dff_7/qnot vdd 0.36fF
+C103 Dff_3/qnot gnd 0.19fF
+C104 final4bitCLA_0/CLA_2/G0 vdd 0.28fF
+C105 final4bitCLA_0/CLA_2/xor_0/anot gnd 0.13fF
+C106 Dff_6/q2 Dff_6/a 0.05fF
+C107 clk Dff_9/a_131_15# 0.05fF
+C108 Dff_6/a Dff_6/a_131_15# 0.11fF
+C109 gnd final4bitCLA_0/CLA_0/and_1/nand_0/y 0.03fF
+C110 Dff_11/b Dff_11/q1 0.05fF
+C111 Dff_8/q2 Dff_8/qnot 0.05fF
+C112 vdd Dff_6/a_6_6# 0.37fF
+C113 vdd Dff_13/q1 0.22fF
+C114 Dff_9/b Dff_9/q1 0.05fF
+C115 vdd clk 0.29fF
+C116 final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/and_1/nand_0/y 0.05fF
+C117 final4bitCLA_0/CLA_0/C0 Vdd 0.06fF
+C118 A0d final4bitCLA_0/CLA_0/and_0/nand_0/y 0.23fF
+C119 gnd vdd 0.11fF
+C120 final4bitCLA_0/CLA_0/and_1/nand_0/y final4bitCLA_0/CLA_0/P0 0.23fF
+C121 vdd Dff_4/a_6_6# 0.37fF
+C122 vdd Dff_7/b 0.24fF
+C123 final4bitCLA_0/CLA_3/xor_1/anot final4bitCLA_0/CLA_3/xor_1/node 0.03fF
+C124 vdd Dff_10/a 0.46fF
+C125 vdd Dff_2/q1 0.22fF
+C126 Dff_2/a_47_6# Dff_2/b 0.10fF
+C127 Dff_3/q1 Dff_3/a 0.05fF
+C128 Dff_13/a Dff_13/q1 0.05fF
+C129 Dff_12/a_6_6# Dff_12/b 0.24fF
+C130 Dff_11/q1 vdd 0.22fF
+C131 final4bitCLA_0/CLA_3/G0 vdd 0.06fF
+C132 clk Dff_10/a 0.32fF
+C133 S1 Vdd 0.06fF
+C134 gnd Dff_8/q2 0.05fF
+C135 Vdd A3d 0.06fF
+C136 A2d vdd 0.29fF
+C137 B1d final4bitCLA_0/CLA_1/xor_0/node 0.22fF
+C138 Dff_8/a clk 0.32fF
+C139 Dff_13/a vdd 0.46fF
+C140 Dff_12/a_90_15# Dff_12/q1 0.11fF
+C141 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/xor_1/node 0.04fF
+C142 clk gnd 1.43fF
+C143 Dff_7/qnot Dff_7/q2 0.05fF
+C144 vdd final4bitCLA_0/CLA_0/G0 0.06fF
+C145 gnd Dff_4/b 0.16fF
+C146 final4bitCLA_0/CLA_1/and_1/nand_0/y vdd 0.48fF
+C147 Dff_10/d gnd 0.05fF
+C148 vdd A3 0.19fF
+C149 final4bitCLA_0/CLA_1/G0 final4bitCLA_0/CLA_1/and_0/nand_0/y 0.05fF
+C150 Dff_13/d vdd 0.19fF
+C151 Dff_5/a clk 0.32fF
+C152 final4bitCLA_0/CLA_2/P0 Vdd 0.28fF
+C153 Vdd final4bitCLA_0/CLA_3/xor_1/node 0.06fF
+C154 Dff_9/a_6_6# Dff_9/d 0.10fF
+C155 Dff_7/q2 clk 0.07fF
+C156 S2 Vdd 0.06fF
+C157 gnd Dff_13/a_90_15# 0.10fF
+C158 Dff_1/a_90_15# clk 0.05fF
+C159 inverter_3/OUT Vdd 0.28fF
+C160 Dff_10/a_47_6# Dff_10/b 0.10fF
+C161 clk Dff_9/d 0.32fF
+C162 Dff_7/a_90_15# Dff_7/a 0.10fF
+C163 final4bitCLA_0/CLA_0/xor_0/node final4bitCLA_0/CLA_0/xor_0/anot 0.03fF
+C164 Dff_6/a Dff_6/q1 0.05fF
+C165 Dff_5/a_131_15# gnd 0.10fF
+C166 final4bitCLA_0/CLA_3/P0 Vdd 0.28fF
+C167 vdd Dff_12/a_6_6# 0.37fF
+C168 clk Dff_8/q1 0.32fF
+C169 final4bitCLA_0/CLA_2/xor_1/anot final4bitCLA_0/CLA_2/xor_1/node 0.03fF
+C170 vdd Dff_12/b 0.24fF
+C171 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/xor_0/node 0.05fF
+C172 final4bitCLA_0/CLA_1/G0 gnd 0.05fF
+C173 A3d gnd 0.17fF
+C174 gnd B0d 0.13fF
+C175 Dff_0/q1 Dff_0/a_47_6# 0.24fF
+C176 vdd final4bitCLA_0/CLA_0/P0 0.06fF
+C177 vdd B2 0.19fF
+C178 final4bitCLA_0/CLA_1/and_0/nand_0/y A1d 0.23fF
+C179 B2d vdd 0.29fF
+C180 Dff_6/q2 vdd 0.37fF
+C181 vdd final4bitCLA_0/CLA_2/C0 0.06fF
+C182 Dff_1/qnot gnd 0.19fF
+C183 Dff_9/a_90_15# Dff_9/a 0.10fF
+C184 Vdd final4bitCLA_0/CLA_3/xor_0/bnot 0.28fF
+C185 Dff_0/b vdd 0.24fF
+C186 S3 Dff_12/qnot 0.05fF
+C187 Dff_5/q1 clk 0.32fF
+C188 vdd Dff_12/a 0.46fF
+C189 vdd Dff_10/qnot 0.36fF
+C190 Dff_11/d Dff_11/b 0.05fF
+C191 vdd final4bitCLA_0/CLA_3/and_1/nand_0/y 0.48fF
+C192 Dff_13/d final4bitCLA_0/CLA_3/or_0/nor_0/y 0.05fF
+C193 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/and_1/nand_0/y 0.23fF
+C194 final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_2/C0 0.76fF
+C195 gnd Dff_8/b 0.16fF
+C196 final4bitCLA_0/CLA_3/or_0/a vdd 0.06fF
+C197 Dff_3/a_6_6# Dff_3/b 0.24fF
+C198 vdd B1 0.19fF
+C199 A1d Dff_3/qnot 0.05fF
+C200 Dff_3/q2 Dff_3/qnot 0.05fF
+C201 final4bitCLA_0/CLA_1/or_0/a vdd 0.28fF
+C202 final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/and_1/nand_0/y 0.23fF
+C203 gnd B0d 0.04fF
+C204 Dff_0/b clk 0.39fF
+C205 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/xor_0/node 0.05fF
+C206 Dff_13/a_90_15# clk 0.05fF
+C207 final4bitCLA_0/CLA_0/P0 gnd 0.30fF
+C208 Dff_13/d gnd 0.13fF
+C209 Dff_9/qnot Dff_9/q2 0.05fF
+C210 Dff_0/q1 Dff_0/a 0.05fF
+C211 final4bitCLA_0/CLA_0/xor_0/bnot final4bitCLA_0/CLA_0/xor_0/anot 0.05fF
+C212 Dff_6/a_47_6# clk 0.05fF
+C213 Vdd S0 0.06fF
+C214 vdd Dff_5/a 0.46fF
+C215 final4bitCLA_0/CLA_3/or_0/nor_0/y gnd 0.21fF
+C216 vdd final4bitCLA_0/CLA_3/P0 0.06fF
+C217 Dff_11/d vdd 0.19fF
+C218 clk Dff_9/a 0.32fF
+C219 gnd Dff_4/a_90_15# 0.10fF
+C220 final4bitCLA_0/CLA_0/and_1/nand_0/y final4bitCLA_0/CLA_0/or_0/a 0.05fF
+C221 Dff_1/a clk 0.32fF
+C222 Dff_5/b Dff_5/a_6_6# 0.24fF
+C223 Dff_11/q1 clk 0.32fF
+C224 Dff_9/b Dff_9/a_47_6# 0.10fF
+C225 final4bitCLA_0/CLA_2/xor_1/anot final4bitCLA_0/CLA_2/xor_1/bnot 0.05fF
+C226 Dff_12/a_131_15# gnd 0.10fF
+C227 Vdd final4bitCLA_0/CLA_3/P0 0.06fF
+C228 A2d final4bitCLA_0/CLA_2/xor_0/anot 0.05fF
+C229 vdd Dff_8/a 0.46fF
+C230 Dff_9/b Dff_9/a_6_6# 0.24fF
+C231 final4bitCLA_0/CLA_0/xor_1/anot final4bitCLA_0/CLA_0/P0 0.08fF
+C232 Dff_1/b Dff_1/q1 0.05fF
+C233 vdd Dff_1/q2 0.37fF
+C234 vdd Dff_0/qnot 0.36fF
+C235 final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/G0 0.48fF
+C236 Dff_9/b clk 0.39fF
+C237 final4bitCLA_0/CLA_3/G0 final4bitCLA_0/CLA_3/or_0/a 0.48fF
+C238 vdd Dff_9/d 0.19fF
+C239 final4bitCLA_0/CLA_1/xor_1/node final4bitCLA_0/CLA_0/C0 0.22fF
+C240 Dff_8/a_47_6# Dff_8/q1 0.24fF
+C241 Dff_6/qnot gnd 0.19fF
+C242 vdd Dff_3/a_6_6# 0.37fF
+C243 final4bitCLA_0/CLA_2/and_1/nand_0/y vdd 0.48fF
+C244 A2d gnd 0.19fF
+C245 vdd Dff_3/qnot 0.36fF
+C246 gnd Dff_11/q1 0.16fF
+C247 final4bitCLA_0/CLA_2/or_0/a vdd 0.28fF
+C248 vdd B0 0.19fF
+C249 vdd Dff_5/q1 0.22fF
+C250 vdd B1d 0.29fF
+C251 B1d vdd 0.06fF
+C252 gnd Dff_10/q1 0.16fF
+C253 Dff_6/a_6_6# clk 0.05fF
+C254 Dff_10/d gnd 0.13fF
+C255 Dff_10/a_131_15# Dff_10/q2 0.10fF
+C256 Dff_3/b clk 0.39fF
+C257 final4bitCLA_0/CLA_3/xor_1/bnot final4bitCLA_0/CLA_2/C0 0.05fF
+C258 gnd final4bitCLA_0/CLA_1/or_0/nor_0/y 0.21fF
+C259 Dff_0/q2 gnd 0.05fF
+C260 B1d Vdd 0.06fF
+C261 Dff_3/q2 clk 0.07fF
+C262 final4bitCLA_0/CLA_1/xor_0/anot final4bitCLA_0/CLA_1/xor_0/bnot 0.05fF
+C263 Dff_11/qnot vdd 0.36fF
+C264 vdd Dff_6/q1 0.22fF
+C265 Dff_5/a_131_15# Dff_5/a 0.11fF
+C266 final4bitCLA_0/CLA_0/xor_1/bnot Cind 0.05fF
+C267 S1 gnd 0.13fF
+C268 final4bitCLA_0/CLA_1/and_0/nand_0/y gnd 0.03fF
+C269 clk gnd 1.43fF
+C270 vdd Dff_8/q1 0.22fF
+C271 vdd Dff_7/a 0.46fF
+C272 gnd Dff_2/a_90_15# 0.10fF
+C273 Dff_0/a gnd 0.05fF
+C274 Dff_1/a_90_15# gnd 0.10fF
+C275 Vdd final4bitCLA_0/CLA_1/xor_1/anot 0.36fF
+C276 Dff_8/a_131_15# gnd 0.10fF
+C277 B3d final4bitCLA_0/CLA_3/xor_0/bnot 0.05fF
+C278 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/xor_1/anot 0.08fF
+C279 final4bitCLA_0/CLA_2/xor_1/node Dff_11/d 0.05fF
+C280 vdd final4bitCLA_0/CLA_0/or_0/a 0.28fF
+C281 Dff_4/a_6_6# clk 0.05fF
+C282 Dff_6/a Dff_6/a_90_15# 0.10fF
+C283 vdd Dff_2/a_6_6# 0.37fF
+C284 vdd Dff_9/a 0.46fF
+C285 Dff_13/a_6_6# clk 0.05fF
+C286 vdd Dff_10/a_6_6# 0.37fF
+C287 vdd clk 0.29fF
+C288 Dff_12/a_47_6# Dff_12/q1 0.24fF
+C289 Dff_3/a_90_15# clk 0.05fF
+C290 Vdd final4bitCLA_0/CLA_2/xor_0/node 0.04fF
+C291 Dff_7/qnot A3d 0.05fF
+C292 A3d vdd 0.06fF
+C293 final4bitCLA_0/CLA_2/P0 Vdd 0.06fF
+C294 final4bitCLA_0/CLA_0/xor_1/node Cind 0.22fF
+C295 Dff_13/a_90_15# Dff_13/q1 0.11fF
+C296 Dff_7/a_47_6# Dff_7/q1 0.24fF
+C297 Dff_10/a_6_6# clk 0.05fF
+C298 Dff_6/qnot Dff_6/q2 0.05fF
+C299 Dff_6/qnot B2d 0.05fF
+C300 Dff_3/a_47_6# Dff_3/q1 0.24fF
+C301 Dff_9/b vdd 0.24fF
+C302 Dff_11/d clk 0.32fF
+C303 Dff_5/b Dff_5/a_47_6# 0.10fF
+C304 final4bitCLA_0/CLA_2/G0 final4bitCLA_0/CLA_2/and_0/nand_0/y 0.05fF
+C305 final4bitCLA_0/CLA_3/and_0/nand_0/y gnd 0.03fF
+C306 gnd B3d 0.04fF
+C307 final4bitCLA_0/CLA_0/xor_1/bnot final4bitCLA_0/CLA_0/xor_1/node 0.23fF
+C308 final4bitCLA_0/CLA_2/C0 gnd 0.04fF
+C309 gnd Dff_5/a 0.05fF
+C310 gnd inverter_0/OUT 0.13fF
+C311 clk Dff_13/a_47_6# 0.05fF
+C312 Dff_3/a_131_15# Dff_3/a 0.11fF
+C313 Dff_1/b Dff_1/a_47_6# 0.10fF
+C314 Dff_7/a Dff_7/q2 0.05fF
+C315 gnd final4bitCLA_0/CLA_3/and_1/nand_0/y 0.03fF
+C316 gnd Dff_12/q1 0.16fF
+C317 final4bitCLA_0/CLA_2/xor_0/bnot gnd 0.13fF
+C318 Vdd gnd 0.40fF
+C319 B2 clk 0.32fF
+C320 Vdd final4bitCLA_0/CLA_2/xor_1/anot 0.36fF
+C321 Dff_6/q2 clk 0.07fF
+C322 Dff_2/a_6_6# B0 0.10fF
+C323 Dff_1/a gnd 0.05fF
+C324 Dff_1/q2 Dff_1/a_131_15# 0.10fF
+C325 Dff_6/a_47_6# Dff_6/b 0.10fF
+C326 Dff_6/a_131_15# clk 0.05fF
+C327 Dff_0/b Dff_0/a_6_6# 0.24fF
+C328 Dff_0/q1 vdd 0.22fF
+C329 Dff_2/qnot B0d 0.05fF
+C330 gnd final4bitCLA_0/CLA_2/xor_1/node 0.09fF
+C331 Dff_11/a_6_6# Dff_11/b 0.24fF
+C332 final4bitCLA_0/CLA_0/C0 vdd 0.28fF
+C333 Dff_13/a_90_15# Dff_13/a 0.10fF
+C334 gnd Dff_11/d 0.05fF
+C335 Dff_10/a_90_15# gnd 0.10fF
+C336 B1d Dff_4/qnot 0.05fF
+C337 B2d final4bitCLA_0/CLA_2/xor_0/node 0.22fF
+C338 Dff_5/a_6_6# clk 0.05fF
+C339 gnd Dff_12/q2 0.05fF
+C340 Vdd final4bitCLA_0/CLA_2/C0 0.06fF
+C341 final4bitCLA_0/CLA_0/G0 gnd 0.05fF
+C342 vdd S3 0.29fF
+C343 clk Dff_2/a_90_15# 0.05fF
+C344 clk Dff_8/a_90_15# 0.05fF
+C345 vdd Cin 0.19fF
+C346 gnd final4bitCLA_0/CLA_0/xor_0/anot 0.13fF
+C347 Dff_0/q1 clk 0.32fF
+C348 gnd Dff_10/q2 0.05fF
+C349 Dff_5/q1 gnd 0.16fF
+C350 gnd final4bitCLA_0/CLA_1/xor_0/node 0.09fF
+C351 Dff_12/a_131_15# clk 0.05fF
+C352 Dff_11/a_6_6# vdd 0.37fF
+C353 vdd Dff_10/d 0.19fF
+C354 Dff_2/a Dff_2/a_90_15# 0.10fF
+C355 final4bitCLA_0/CLA_0/xor_0/node final4bitCLA_0/CLA_0/xor_0/bnot 0.23fF
+C356 Dff_1/b clk 0.39fF
+C357 clk Cin 0.32fF
+C358 vdd Dff_7/q2 0.37fF
+C359 Dff_3/a_6_6# A1 0.10fF
+C360 gnd clk 1.43fF
+C361 Dff_6/a_6_6# Dff_6/b 0.24fF
+C362 Dff_10/d clk 0.32fF
+C363 final4bitCLA_0/CLA_3/xor_0/node final4bitCLA_0/CLA_3/xor_0/bnot 0.23fF
+C364 clk B1 0.32fF
+C365 gnd Dff_11/qnot 0.19fF
+C366 final4bitCLA_0/CLA_1/xor_0/anot A1d 0.05fF
+C367 Dff_0/q1 Dff_0/a_90_15# 0.11fF
+C368 Dff_7/q1 gnd 0.16fF
+C369 Dff_4/b Dff_4/a_6_6# 0.24fF
+C370 A0 Dff_1/b 0.05fF
+C371 vdd Dff_1/q1 0.22fF
+C372 Vdd B0d 0.06fF
+C373 gnd Dff_9/q2 0.05fF
+C374 Dff_6/b gnd 0.16fF
+C375 final4bitCLA_0/CLA_3/xor_1/node final4bitCLA_0/CLA_2/C0 0.22fF
+C376 A3d final4bitCLA_0/CLA_3/xor_0/anot 0.05fF
+C377 final4bitCLA_0/CLA_2/xor_1/bnot gnd 0.13fF
+C378 Dff_7/a_131_15# gnd 0.10fF
+C379 gnd Vdd 0.40fF
+C380 Dff_11/q2 Dff_11/qnot 0.05fF
+C381 Dff_11/a Dff_11/a_90_15# 0.10fF
+C382 final4bitCLA_0/CLA_2/and_0/nand_0/y vdd 0.48fF
+C383 Dff_10/a_131_15# gnd 0.10fF
+C384 B3d vdd 0.06fF
+C385 final4bitCLA_0/CLA_3/and_0/nand_0/y vdd 0.48fF
+C386 vdd Dff_5/a_6_6# 0.37fF
+C387 Dff_13/a_131_15# gnd 0.10fF
+C388 B3 Dff_8/b 0.05fF
+C389 Dff_13/a_6_6# vdd 0.37fF
+C390 final4bitCLA_0/CLA_1/or_0/a final4bitCLA_0/CLA_1/and_1/nand_0/y 0.05fF
+C391 vdd final4bitCLA_0/CLA_2/or_0/nor_0/y 0.09fF
+C392 gnd final4bitCLA_0/CLA_3/xor_1/anot 0.13fF
+C393 Dff_6/q1 clk 0.32fF
+C394 Dff_9/q1 gnd 0.16fF
+C395 Dff_8/a Dff_8/q1 0.05fF
+C396 Vdd final4bitCLA_0/CLA_1/C0 0.06fF
+C397 Dff_9/a_131_15# Dff_9/a 0.11fF
+C398 gnd Dff_2/q1 0.16fF
+C399 final4bitCLA_0/CLA_0/C0 vdd 0.06fF
+C400 gnd clk 1.43fF
+C401 final4bitCLA_0/CLA_3/P0 final4bitCLA_0/CLA_3/xor_1/node 0.04fF
+C402 Dff_13/a_47_6# Dff_13/q1 0.24fF
+C403 Dff_8/a_6_6# B3 0.10fF
+C404 final4bitCLA_0/CLA_1/C0 vdd 0.06fF
+C405 Dff_11/qnot S2 0.05fF
+C406 vdd Cind 0.06fF
+C407 Dff_13/qnot Dff_13/q2 0.05fF
+C408 clk A1 0.32fF
+C409 Dff_5/qnot Dff_5/q2 0.05fF
+C410 Dff_11/a vdd 0.46fF
+C411 gnd final4bitCLA_0/CLA_3/xor_1/anot 0.08fF
+C412 final4bitCLA_0/CLA_3/xor_1/bnot Vdd 0.28fF
+C413 gnd Dff_13/q2 0.05fF
+C414 Dff_10/a_6_6# Dff_10/b 0.24fF
+C415 Vdd final4bitCLA_0/CLA_2/xor_1/node 0.06fF
+C416 vdd Dff_8/qnot 0.36fF
+C417 Dff_5/a_47_6# clk 0.05fF
+C418 vdd Dff_13/a_47_6# 0.37fF
+C419 Dff_11/a_47_6# Dff_11/b 0.10fF
+C420 gnd final4bitCLA_0/CLA_2/and_1/nand_0/y 0.03fF
+C421 Dff_13/d Dff_13/a_6_6# 0.10fF
+C422 final4bitCLA_0/CLA_2/or_0/a gnd 0.13fF
+C423 A2 Dff_5/b 0.05fF
+C424 final4bitCLA_0/CLA_2/xor_0/bnot final4bitCLA_0/CLA_2/xor_0/node 0.23fF
+C425 Dff_9/qnot vdd 0.36fF
+C426 gnd Dff_0/a_90_15# 0.10fF
+C427 Dff_11/a_131_15# Dff_11/a 0.11fF
+C428 Dff_13/a_131_15# clk 0.05fF
+C429 Dff_5/q1 Dff_5/a 0.05fF
+C430 gnd Dff_11/d 0.13fF
+C431 gnd final4bitCLA_0/CLA_1/xor_1/node 0.09fF
+C432 B2 Dff_6/b 0.05fF
+C433 Dff_9/qnot S0 0.05fF
+C434 Dff_4/a Dff_4/q2 0.05fF
+C435 Dff_11/a_6_6# clk 0.05fF
+C436 Dff_11/a_47_6# vdd 0.37fF
+C437 final4bitCLA_0/CLA_1/xor_1/bnot final4bitCLA_0/CLA_1/xor_1/anot 0.05fF
+C438 clk Dff_12/q1 0.32fF
+C439 vdd Dff_10/q1 0.22fF
+C440 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_0/C0 0.76fF
+C441 gnd final4bitCLA_0/CLA_3/G0 0.13fF
+C442 Vdd Dff_9/d 0.28fF
+C443 A0d gnd 0.13fF
+C444 Dff_4/b B1 0.05fF
+C445 final4bitCLA_0/CLA_3/xor_1/bnot final4bitCLA_0/CLA_3/xor_1/node 0.23fF
+C446 clk Dff_10/q1 0.32fF
+C447 vdd Dff_1/a_47_6# 0.37fF
+C448 vdd S1 0.29fF
+C449 Dff_12/q2 clk 0.07fF
+C450 clk Dff_13/q2 0.07fF
+C451 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/xor_1/anot 0.08fF
+C452 gnd final4bitCLA_0/CLA_2/or_0/nor_0/y 0.21fF
+C453 final4bitCLA_0/CLA_0/G0 final4bitCLA_0/CLA_0/and_0/nand_0/y 0.05fF
+C454 Dff_1/a Dff_1/a_90_15# 0.10fF
+C455 Dff_1/b gnd 0.16fF
+C456 Dff_12/qnot Dff_12/q2 0.05fF
+C457 Dff_2/q1 clk 0.32fF
+C458 final4bitCLA_0/CLA_1/xor_0/node Vdd 0.04fF
+C459 Dff_0/a_131_15# gnd 0.10fF
+C460 gnd Dff_12/a_90_15# 0.10fF
+C461 Dff_12/a_131_15# Dff_12/a 0.11fF
+C462 final4bitCLA_0/CLA_1/P0 gnd 0.30fF
+C463 vdd Dff_4/a_47_6# 0.37fF
+C464 vdd Dff_5/a_47_6# 0.37fF
+C465 Dff_0/a_6_6# Cin 0.10fF
+C466 Vdd gnd 0.40fF
+C467 final4bitCLA_0/CLA_0/xor_1/bnot final4bitCLA_0/CLA_0/xor_1/anot 0.05fF
+C468 Dff_3/b gnd 0.16fF
+C469 Dff_10/d Dff_10/b 0.05fF
+C470 A1d gnd 0.16fF
+C471 Dff_3/q2 gnd 0.05fF
+C472 vdd Dff_4/a 0.46fF
+C473 Dff_2/a Dff_2/q1 0.05fF
+C474 vdd B3d 0.29fF
+C475 clk Dff_3/a 0.32fF
+C476 final4bitCLA_0/CLA_1/xor_1/node Vdd 0.04fF
+C477 Vdd inverter_4/OUT 0.28fF
+C478 Dff_9/b Dff_9/d 0.05fF
+C479 vdd clk 0.29fF
+C480 A2d B2d 1.69fF
+C481 final4bitCLA_0/CLA_2/or_0/a final4bitCLA_0/CLA_2/or_0/nor_0/y 0.13fF
+C482 Dff_9/a_90_15# gnd 0.10fF
+C483 Dff_7/q1 clk 0.32fF
+C484 vdd A3d 0.29fF
+C485 final4bitCLA_0/CLA_3/xor_0/node gnd 0.09fF
+C486 Dff_1/a_6_6# clk 0.05fF
+C487 inverter_0/OUT S0 0.05fF
+C488 gnd final4bitCLA_0/CLA_3/P0 0.19fF
+C489 Dff_7/a_131_15# clk 0.05fF
+C490 Dff_11/a clk 0.32fF
+C491 Dff_6/a_90_15# clk 0.05fF
+C492 Dff_7/q1 Dff_7/b 0.05fF
+C493 Dff_1/qnot A0d 0.05fF
+C494 Dff_6/q1 Dff_6/b 0.05fF
+C495 gnd B1 0.05fF
+C496 Dff_2/b Dff_2/q1 0.05fF
+C497 vdd A0 0.19fF
+C498 final4bitCLA_0/CLA_0/and_1/nand_0/y vdd 0.48fF
+C499 final4bitCLA_0/CLA_0/xor_1/node final4bitCLA_0/CLA_0/xor_1/anot 0.03fF
+C500 clk Dff_5/q2 0.07fF
+C501 final4bitCLA_0/CLA_0/C0 gnd 0.13fF
+C502 A0 Dff_1/a_6_6# 0.10fF
+C503 gnd Dff_13/b 0.16fF
+C504 final4bitCLA_0/CLA_3/G0 vdd 0.28fF
+C505 Dff_3/a_90_15# gnd 0.10fF
+C506 clk gnd 1.43fF
+C507 gnd B0 0.05fF
+C508 Vdd final4bitCLA_0/CLA_1/xor_1/node 0.06fF
+C509 Vdd final4bitCLA_0/CLA_0/P0 0.06fF
+C510 vdd Dff_4/q2 0.37fF
+C511 gnd Dff_11/a 0.05fF
+C512 final4bitCLA_0/CLA_1/G0 vdd 0.06fF
+C513 vdd final4bitCLA_0/CLA_2/C0 0.28fF
+C514 vdd Dff_6/a 0.46fF
+C515 Dff_11/a_47_6# clk 0.05fF
+C516 Dff_11/a Dff_11/q2 0.05fF
+C517 clk Dff_10/a_90_15# 0.05fF
+C518 A2 clk 0.32fF
+C519 clk Dff_3/q1 0.32fF
+C520 Vdd final4bitCLA_0/CLA_3/xor_1/node 0.04fF
+C521 vdd Dff_10/q2 0.37fF
+C522 vdd Dff_2/q2 0.37fF
+C523 gnd Dff_12/d 0.05fF
+C524 clk B3 0.32fF
+C525 vdd clk 0.29fF
+C526 vdd Cind 0.29fF
+C527 Dff_12/b Dff_12/q1 0.05fF
+C528 clk Dff_10/q2 0.07fF
+C529 Dff_13/a_131_15# Dff_13/a 0.11fF
+C530 B1d gnd 0.13fF
+C531 final4bitCLA_0/CLA_3/xor_0/node final4bitCLA_0/CLA_3/xor_0/anot 0.03fF
+C532 vdd final4bitCLA_0/CLA_0/or_0/nor_0/y 0.09fF
+C533 Dff_8/a Dff_8/a_90_15# 0.10fF
+C534 clk Dff_13/b 0.39fF
+C535 gnd Dff_2/a_131_15# 0.10fF
+C536 Dff_13/q2 vdd 0.37fF
+C537 Dff_2/a vdd 0.46fF
+C538 B0d vdd 0.06fF
+C539 Dff_12/a Dff_12/q1 0.05fF
+C540 final4bitCLA_0/CLA_2/xor_0/bnot final4bitCLA_0/CLA_2/xor_0/anot 0.05fF
+C541 vdd Dff_5/q2 0.37fF
+C542 gnd vdd 0.11fF
+C543 Dff_10/b Dff_10/q1 0.05fF
+C544 Dff_12/a Dff_12/q2 0.05fF
+C545 Dff_4/q1 Dff_4/a_47_6# 0.24fF
+C546 Vdd Dff_12/d 0.28fF
+C547 Dff_13/a Dff_13/q2 0.05fF
+C548 Dff_1/a_131_15# clk 0.05fF
+C549 gnd Dff_8/a 0.05fF
+C550 Dff_8/a_131_15# Dff_8/q2 0.10fF
+C551 Cout inverter_4/OUT 0.05fF
+C552 Dff_10/a_47_6# Dff_10/q1 0.24fF
+C553 final4bitCLA_0/CLA_3/xor_0/node Vdd 0.06fF
+C554 Dff_8/a_6_6# Dff_8/b 0.24fF
+C555 Dff_7/a_90_15# Dff_7/q1 0.11fF
+C556 clk B0 0.32fF
+C557 final4bitCLA_0/CLA_1/C0 gnd 0.04fF
+C558 Dff_4/a Dff_4/q1 0.05fF
+C559 clk Dff_10/a_131_15# 0.05fF
+C560 Dff_2/b vdd 0.24fF
+C561 A2 vdd 0.19fF
+C562 B2d gnd 0.04fF
+C563 clk Dff_12/a_90_15# 0.05fF
+C564 Dff_8/a_90_15# Dff_8/q1 0.11fF
+C565 Vdd final4bitCLA_0/CLA_2/xor_1/node 0.04fF
+C566 vdd Dff_12/q1 0.22fF
+C567 gnd final4bitCLA_0/CLA_2/C0 0.13fF
+C568 vdd final4bitCLA_0/CLA_1/or_0/nor_0/y 0.09fF
+C569 Vdd final4bitCLA_0/CLA_0/P0 0.28fF
+C570 gnd S0 0.13fF
+C571 Vdd gnd 0.40fF
+C572 vdd gnd 0.11fF
+C573 Dff_0/a Dff_0/q2 0.05fF
+C574 Dff_4/qnot Dff_4/q2 0.05fF
+C575 Dff_5/a_131_15# Dff_5/q2 0.10fF
+C576 vdd Dff_12/q2 0.37fF
+C577 clk Dff_5/a_90_15# 0.05fF
+C578 Dff_4/a Dff_4/a_131_15# 0.11fF
+C579 gnd Dff_8/q1 0.16fF
+C580 final4bitCLA_0/CLA_1/xor_1/bnot final4bitCLA_0/CLA_0/C0 0.05fF
+C581 Vdd Dff_10/d 0.28fF
+C582 vdd Dff_3/b 0.24fF
+C583 A1d vdd 0.29fF
+C584 vdd Dff_3/q2 0.37fF
+C585 Dff_2/a_131_15# Dff_2/q2 0.10fF
+C586 gnd final4bitCLA_0/CLA_0/and_0/nand_0/y 0.03fF
+C587 B1d final4bitCLA_0/CLA_1/xor_0/bnot 0.05fF
+C588 gnd final4bitCLA_0/CLA_1/C0 0.13fF
+C589 Dff_13/d vdd 0.28fF
+C590 Dff_2/a_131_15# clk 0.05fF
+C591 Dff_2/a_6_6# clk 0.05fF
+C592 Dff_0/q1 Dff_0/b 0.05fF
+C593 Dff_2/b B0 0.05fF
+C594 vdd Dff_2/qnot 0.36fF
+C595 final4bitCLA_0/CLA_1/G0 gnd 0.13fF
+C596 Dff_2/a_47_6# Dff_2/q1 0.24fF
+C597 final4bitCLA_0/CLA_3/or_0/nor_0/y vdd 0.09fF
+C598 Vdd inverter_0/OUT 0.28fF
+C599 Dff_1/q2 clk 0.07fF
+C600 clk Dff_4/a_47_6# 0.05fF
+C601 vdd B3 0.19fF
+C602 A1 gnd 0.05fF
+C603 final4bitCLA_0/CLA_3/xor_0/node final4bitCLA_0/CLA_3/P0 0.05fF
+C604 gnd Vdd 0.40fF
+C605 final4bitCLA_0/CLA_2/xor_1/node final4bitCLA_0/CLA_1/C0 0.22fF
+C606 Dff_0/b Cin 0.05fF
+C607 Dff_2/a_131_15# Dff_2/a 0.11fF
+C608 final4bitCLA_0/CLA_2/xor_1/anot gnd 0.08fF
+C609 Vdd final4bitCLA_0/CLA_2/xor_1/bnot 0.28fF
+C610 final4bitCLA_0/CLA_0/or_0/a final4bitCLA_0/CLA_0/or_0/nor_0/y 0.13fF
+C611 Dff_4/a clk 0.32fF
+C612 gnd final4bitCLA_0/CLA_0/G0 0.13fF
+C613 vdd Dff_4/qnot 0.36fF
+C614 B2 Dff_6/a_6_6# 0.10fF
+C615 Dff_13/b Dff_13/q1 0.05fF
+C616 Dff_7/a Dff_7/q1 0.05fF
+C617 final4bitCLA_0/CLA_0/xor_1/anot gnd 0.13fF
+C618 vdd Dff_1/qnot 0.36fF
+C619 inverter_4/OUT gnd 0.13fF
+C620 Dff_7/a_131_15# Dff_7/a 0.11fF
+C621 Dff_4/a_131_15# Dff_4/q2 0.10fF
+C622 clk Dff_3/a_47_6# 0.05fF
+C623 A0d vdd 0.06fF
+C624 B2 gnd 0.05fF
+C625 final4bitCLA_0/CLA_1/and_0/nand_0/y vdd 0.48fF
+C626 vdd Dff_13/b 0.24fF
+C627 Dff_6/q2 gnd 0.05fF
+C628 B2d gnd 0.13fF
+C629 Dff_6/a_131_15# gnd 0.10fF
+C630 Dff_12/d clk 0.32fF
+C631 gnd Dff_5/q2 0.05fF
+C632 Dff_10/q1 Dff_10/a 0.05fF
+C633 A0d B0d 1.66fF
+C634 Dff_8/q2 clk 0.07fF
+C635 Dff_2/b Dff_2/a_6_6# 0.24fF
+C636 Dff_6/a clk 0.32fF
+C637 vdd Dff_4/q1 0.22fF
+C638 gnd final4bitCLA_0/CLA_3/P0 0.30fF
+C639 clk gnd 1.43fF
+C640 final4bitCLA_0/CLA_3/G0 gnd 0.05fF
+C641 Dff_11/b vdd 0.24fF
+C642 Dff_6/a_47_6# Dff_6/q1 0.24fF
+C643 vdd Dff_7/q1 0.22fF
+C644 final4bitCLA_0/CLA_2/xor_1/bnot final4bitCLA_0/CLA_1/C0 0.05fF
+C645 Dff_0/b gnd 0.16fF
+C646 clk Dff_4/q2 0.07fF
+C647 Dff_1/a_131_15# gnd 0.10fF
+C648 Dff_5/q1 Dff_5/a_47_6# 0.24fF
+C649 Vdd B2d 0.06fF
+C650 gnd final4bitCLA_0/CLA_1/xor_1/anot 0.13fF
+C651 A2 gnd 0.05fF
+C652 Dff_7/a_47_6# clk 0.05fF
+C653 A2d vdd 0.06fF
+C654 Dff_13/d Dff_13/b 0.05fF
+C655 Vdd gnd 0.40fF
+C656 Dff_7/a_47_6# Dff_7/b 0.10fF
+C657 final4bitCLA_0/CLA_1/xor_1/node Dff_10/d 0.05fF
+C658 Dff_9/a_131_15# gnd 0.10fF
+C659 gnd Dff_3/a 0.05fF
+C660 Dff_12/a Dff_12/a_90_15# 0.10fF
+C661 Dff_2/a_47_6# vdd 0.37fF
+C662 vdd Dff_0/a_47_6# 0.37fF
+C663 vdd Dff_0/q2 0.37fF
+C664 S3 Vdd 0.06fF
+C665 Dff_4/b Dff_4/a_47_6# 0.10fF
+C666 gnd final4bitCLA_0/CLA_1/and_1/nand_0/y 0.03fF
+C667 Dff_3/a_131_15# clk 0.05fF
+C668 final4bitCLA_0/CLA_0/xor_0/node Vdd 0.04fF
+C669 Dff_4/a_6_6# B1 0.10fF
+C670 vdd clk 0.29fF
+C671 Dff_0/a_47_6# clk 0.05fF
+C672 final4bitCLA_0/CLA_2/G0 gnd 0.13fF
+C673 Dff_6/q2 Dff_6/a_131_15# 0.10fF
+C674 clk Dff_8/b 0.39fF
+C675 final4bitCLA_0/CLA_3/or_0/a final4bitCLA_0/CLA_3/and_1/nand_0/y 0.05fF
+C676 gnd final4bitCLA_0/CLA_1/xor_0/anot 0.08fF
+C677 Dff_6/qnot vdd 0.36fF
+C678 Dff_0/qnot gnd 0.19fF
+C679 Dff_6/q1 gnd 0.16fF
+C680 Dff_1/q1 Dff_1/a_47_6# 0.24fF
+C681 Dff_3/b A1 0.05fF
+C682 Dff_9/q1 Dff_9/a_90_15# 0.11fF
+C683 Dff_0/q2 clk 0.07fF
+C684 B1d A1d 1.69fF
+C685 Dff_12/a_47_6# clk 0.05fF
+C686 Vdd gnd 0.40fF
+C687 Dff_10/d Dff_10/a_6_6# 0.10fF
+C688 final4bitCLA_0/CLA_3/or_0/nor_0/y final4bitCLA_0/CLA_3/or_0/a 0.13fF
+C689 final4bitCLA_0/CLA_0/or_0/nor_0/y gnd 0.21fF
+C690 Dff_1/q2 gnd 0.05fF
+C691 vdd final4bitCLA_0/CLA_3/or_0/a 0.28fF
+C692 clk Dff_9/q2 0.07fF
+C693 final4bitCLA_0/CLA_1/xor_0/anot final4bitCLA_0/CLA_1/xor_0/node 0.03fF
+C694 Dff_7/a_131_15# Dff_7/q2 0.10fF
+C695 Dff_0/a vdd 0.46fF
+C696 final4bitCLA_0/CLA_3/xor_1/bnot gnd 0.13fF
+C697 clk Dff_8/a_6_6# 0.05fF
+C698 Dff_9/q1 Dff_9/a_47_6# 0.24fF
+C699 Dff_10/qnot S1 0.05fF
+C700 Dff_10/a_90_15# Dff_10/a 0.10fF
+C701 Dff_5/a Dff_5/q2 0.05fF
+C702 vdd clk 0.29fF
+C703 Dff_7/qnot gnd 0.19fF
+C704 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_2/and_1/nand_0/y 0.23fF
+C705 vdd Dff_8/q2 0.37fF
+C706 Dff_0/a clk 0.32fF
+C707 inverter_1/OUT gnd 0.13fF
+C708 final4bitCLA_0/CLA_1/P0 Vdd 0.28fF
+C709 clk Dff_11/a_90_15# 0.05fF
+C710 Dff_9/q1 clk 0.32fF
+C711 Dff_10/a Dff_10/q2 0.05fF
+C712 Dff_3/q1 gnd 0.16fF
+C713 clk gnd 1.43fF
+C714 gnd Dff_5/a_90_15# 0.10fF
+C715 gnd clk 1.43fF
+C716 Vdd final4bitCLA_0/CLA_0/xor_0/bnot 0.28fF
+C717 gnd Dff_8/qnot 0.19fF
+C718 Dff_12/a_6_6# Dff_12/d 0.10fF
+C719 gnd Dff_9/d 0.05fF
+C720 Dff_1/q1 clk 0.32fF
+C721 final4bitCLA_0/CLA_1/xor_0/anot Vdd 0.36fF
+C722 Dff_12/d Dff_12/b 0.05fF
+C723 gnd Dff_12/qnot 0.19fF
+C724 Vdd Cind 0.06fF
+C725 Dff_11/b clk 0.39fF
+C726 gnd Dff_8/a_90_15# 0.10fF
+C727 final4bitCLA_0/CLA_3/and_0/nand_0/y A3d 0.23fF
+C728 A3d B3d 1.66fF
+C729 Dff_7/b gnd 0.16fF
+C730 inverter_1/OUT S1 0.05fF
+C731 vdd A1 0.19fF
+C732 final4bitCLA_0/CLA_1/or_0/a gnd 0.13fF
+C733 Dff_5/b clk 0.39fF
+C734 Vdd B3d 0.06fF
+C735 gnd Dff_11/a_90_15# 0.10fF
+C736 gnd final4bitCLA_0/CLA_3/xor_0/bnot 0.13fF
+C737 inverter_2/OUT S2 0.05fF
+C738 Dff_0/a Dff_0/a_90_15# 0.10fF
+C739 gnd final4bitCLA_0/CLA_0/P0 0.19fF
+C740 Dff_4/a gnd 0.05fF
+C741 vdd Dff_1/a 0.46fF
+C742 final4bitCLA_0/CLA_2/xor_0/bnot Vdd 0.28fF
+C743 Vdd final4bitCLA_0/CLA_0/xor_1/bnot 0.28fF
+C744 Dff_7/a_6_6# clk 0.05fF
+C745 gnd final4bitCLA_0/CLA_2/xor_0/node 0.09fF
+C746 Dff_8/a_47_6# Dff_8/b 0.10fF
+C747 Dff_1/q2 Dff_1/qnot 0.05fF
+C748 gnd Dff_11/b 0.16fF
+C749 Dff_4/a Dff_4/a_90_15# 0.10fF
+C750 Dff_13/qnot gnd 0.19fF
+C751 Vdd final4bitCLA_0/CLA_3/xor_0/anot 0.36fF
+C752 vdd clk 0.29fF
+C753 gnd Dff_10/b 0.16fF
+C754 Dff_10/a_131_15# Dff_10/a 0.11fF
+C755 final4bitCLA_0/CLA_0/xor_1/bnot gnd 0.13fF
+C756 B3d Dff_8/qnot 0.05fF
+C757 Dff_7/a_6_6# Dff_7/b 0.24fF
+C758 Dff_0/q2 Dff_0/a_131_15# 0.10fF
+C759 Dff_8/a_131_15# clk 0.05fF
+C760 Dff_11/a Dff_11/q1 0.05fF
+C761 final4bitCLA_0/CLA_1/xor_1/bnot gnd 0.13fF
+C762 Vdd gnd 0.40fF
+C763 vdd Dff_9/q2 0.37fF
+C764 Dff_3/q2 Dff_3/a 0.05fF
+C765 A3 gnd 0.05fF
+C766 B1d gnd 0.04fF
+C767 Dff_11/a_131_15# clk 0.05fF
+C768 vdd Dff_4/b 0.24fF
+C769 vdd Dff_8/b 0.24fF
+C770 final4bitCLA_0/CLA_1/P0 final4bitCLA_0/CLA_1/xor_1/node 0.04fF
+C771 gnd Dff_9/a 0.05fF
+C772 gnd Dff_2/q2 0.05fF
+C773 vdd Dff_12/d 0.19fF
+C774 Dff_0/q1 gnd 0.16fF
+C775 Dff_0/a Dff_0/a_131_15# 0.11fF
+C776 gnd clk 1.43fF
+C777 final4bitCLA_0/CLA_2/xor_0/bnot B2d 0.05fF
+C778 gnd final4bitCLA_0/CLA_1/xor_0/bnot 0.13fF
+C779 Vdd final4bitCLA_0/CLA_0/xor_1/node 0.04fF
+C780 Dff_11/q2 vdd 0.37fF
+C781 Dff_11/a_6_6# Dff_11/d 0.10fF
+C782 gnd Dff_4/q2 0.05fF
+C783 gnd B3d 0.13fF
+C784 Vdd Dff_11/d 0.28fF
+C785 Vdd Cout 0.06fF
+C786 Dff_10/qnot Dff_10/q2 0.05fF
+C787 Dff_9/q1 vdd 0.22fF
+C788 vdd Dff_5/b 0.24fF
+C789 vdd Dff_8/a_6_6# 0.37fF
+C790 Dff_4/q1 clk 0.32fF
+C791 Dff_11/a_131_15# gnd 0.10fF
+C792 gnd Cin 0.05fF
+C793 Dff_11/a_47_6# Dff_11/q1 0.24fF
+C794 gnd final4bitCLA_0/CLA_0/xor_1/node 0.09fF
+C795 Vdd A0d 0.06fF
+C796 Dff_7/a_6_6# A3 0.10fF
+C797 Dff_9/b gnd 0.16fF
+C798 gnd Dff_2/a 0.05fF
+C799 final4bitCLA_0/CLA_1/xor_0/node final4bitCLA_0/CLA_1/xor_0/bnot 0.23fF
+C800 Dff_3/a_6_6# clk 0.05fF
+C801 final4bitCLA_0/CLA_3/xor_0/anot final4bitCLA_0/CLA_3/xor_0/bnot 0.05fF
+C802 vdd Dff_5/qnot 0.36fF
+C803 Dff_12/a_47_6# Dff_12/b 0.10fF
+C804 Dff_6/a_90_15# gnd 0.10fF
+C805 final4bitCLA_0/CLA_2/P0 gnd 0.30fF
+C806 Vdd final4bitCLA_0/CLA_2/xor_0/anot 0.36fF
+C807 Dff_11/a_131_15# Dff_11/q2 0.10fF
+C808 gnd clk 1.43fF
+C809 gnd final4bitCLA_0/CLA_0/or_0/a 0.13fF
+C810 vdd Dff_3/a 0.46fF
+C811 Dff_5/a Dff_5/a_90_15# 0.10fF
+C812 Dff_3/a_90_15# Dff_3/a 0.10fF
+C813 Dff_1/a_47_6# clk 0.05fF
+C814 gnd final4bitCLA_0/CLA_0/xor_0/anot 0.08fF
+C815 final4bitCLA_0/CLA_0/xor_0/node Vdd 0.06fF
+C816 Dff_4/a_131_15# clk 0.05fF
+C817 Cout Dff_13/qnot 0.05fF
+C818 S2 vdd 0.29fF
+C819 Dff_7/a_90_15# gnd 0.10fF
+C820 Dff_12/d gnd 0.13fF
+C821 gnd final4bitCLA_0/CLA_1/xor_1/anot 0.08fF
+C822 final4bitCLA_0/CLA_1/xor_1/bnot Vdd 0.28fF
+C823 inverter_3/OUT S3 0.05fF
+C824 Dff_9/a_90_15# clk 0.05fF
+C825 vdd Dff_6/b 0.24fF
+C826 Cout gnd 0.13fF
+C827 Dff_3/b Dff_3/q1 0.05fF
+C828 gnd Dff_2/b 0.16fF
+C829 final4bitCLA_0/CLA_3/or_0/a gnd 0.13fF
+C830 final4bitCLA_0/CLA_3/xor_0/node A3d 0.04fF
+C831 final4bitCLA_0/CLA_0/xor_1/node Dff_9/d 0.05fF
+C832 inverter_1/OUT Vdd 0.28fF
+C833 Vdd A2d 0.06fF
+C834 gnd final4bitCLA_0/CLA_3/xor_1/node 0.09fF
+C835 final4bitCLA_0/CLA_3/xor_0/node Vdd 0.04fF
+C836 vdd B0d 0.29fF
+C837 final4bitCLA_0/CLA_0/or_0/a vdd 0.06fF
+C838 gnd Dff_12/b 0.16fF
+C839 clk Dff_9/a_47_6# 0.05fF
+C840 vdd clk 0.29fF
+C841 gnd final4bitCLA_0/CLA_2/xor_1/anot 0.13fF
+C842 Dff_1/q1 gnd 0.16fF
+C843 Dff_1/a Dff_1/a_131_15# 0.11fF
+C844 vdd clk 0.29fF
+C845 final4bitCLA_0/CLA_2/xor_1/bnot final4bitCLA_0/CLA_2/xor_1/node 0.23fF
+C846 Vdd final4bitCLA_0/CLA_2/xor_0/node 0.06fF
+C847 final4bitCLA_0/CLA_1/xor_0/anot gnd 0.13fF
+C848 Dff_5/q1 Dff_5/a_90_15# 0.11fF
+C849 Dff_2/q1 Dff_2/a_90_15# 0.11fF
+C850 Dff_2/q2 clk 0.07fF
+C851 final4bitCLA_0/CLA_2/P0 vdd 0.06fF
+C852 A0d final4bitCLA_0/CLA_0/xor_0/anot 0.05fF
+C853 Dff_9/a_6_6# clk 0.05fF
+C854 vdd Dff_7/a_47_6# 0.37fF
+C855 gnd Dff_12/a 0.05fF
+C856 Dff_12/a_131_15# Dff_12/q2 0.10fF
+C857 vdd Dff_12/a_47_6# 0.37fF
+C858 Dff_8/a Dff_8/q2 0.05fF
+C859 Dff_0/qnot Cind 0.05fF
+C860 vdd gnd 0.11fF
+C861 gnd Dff_10/a 0.05fF
+C862 Dff_2/a Dff_2/q2 0.05fF
+C863 clk Dff_7/b 0.39fF
+C864 Vdd final4bitCLA_0/CLA_0/xor_1/node 0.06fF
+C865 final4bitCLA_0/CLA_1/P0 gnd 0.19fF
+C866 Dff_2/a clk 0.32fF
+C867 gnd Dff_2/qnot 0.19fF
+C868 inverter_2/OUT Vdd 0.28fF
+C869 vdd Dff_3/q1 0.22fF
+C870 A0 clk 0.32fF
+C871 A2d final4bitCLA_0/CLA_2/and_0/nand_0/y 0.23fF
+C872 Dff_3/a_90_15# Dff_3/q1 0.11fF
+C873 gnd clk 1.43fF
+C874 Vdd final4bitCLA_0/CLA_1/xor_0/node 0.06fF
+C875 vdd A0d 0.29fF
+C876 final4bitCLA_0/CLA_3/xor_1/anot final4bitCLA_0/CLA_3/P0 0.08fF
+C877 clk Dff_0/a_90_15# 0.05fF
+C878 Vdd final4bitCLA_0/CLA_3/xor_1/anot 0.36fF
+C879 Dff_11/q2 clk 0.07fF
+C880 final4bitCLA_0/CLA_2/P0 final4bitCLA_0/CLA_1/C0 0.76fF
+C881 Dff_7/a gnd 0.05fF
+C882 Dff_4/q1 Dff_4/b 0.05fF
+C883 vdd Dff_1/b 0.24fF
+C884 final4bitCLA_0/CLA_0/xor_0/node B0d 0.22fF
+C885 Dff_9/a_131_15# Dff_9/q2 0.10fF
+C886 Dff_13/a_6_6# Dff_13/b 0.24fF
+C887 Dff_1/b Dff_1/a_6_6# 0.24fF
+C888 Dff_1/a Dff_1/q2 0.05fF
+C889 gnd final4bitCLA_0/CLA_2/xor_0/anot 0.08fF
+C890 Dff_2/b clk 0.39fF
+C891 B2d vdd 0.06fF
+C892 gnd Dff_13/q1 0.16fF
+C893 Dff_5/b gnd 0.16fF
+C894 A3 clk 0.32fF
+C895 gnd Dff_11/q2 0.05fF
+C896 vdd Dff_9/a_47_6# 0.37fF
+C897 Dff_9/d gnd 0.13fF
+C898 Dff_13/qnot vdd 0.36fF
+C899 gnd Dff_5/qnot 0.19fF
+C900 final4bitCLA_0/CLA_2/G0 vdd 0.06fF
+C901 vdd clk 0.29fF
+C902 A2 Dff_5/a_6_6# 0.10fF
+C903 final4bitCLA_0/CLA_1/xor_0/bnot Vdd 0.28fF
+C904 A3 Dff_7/b 0.05fF
+C905 Dff_3/a_131_15# gnd 0.10fF
+C906 Dff_9/a_6_6# vdd 0.37fF
+C907 gnd Dff_4/qnot 0.19fF
+C908 A1d final4bitCLA_0/CLA_1/xor_0/node 0.04fF
+C909 clk Dff_8/a_47_6# 0.05fF
+C910 A2d Dff_5/qnot 0.05fF
+C911 Dff_0/a_131_15# clk 0.05fF
+C912 Vdd final4bitCLA_0/CLA_0/xor_0/anot 0.36fF
+C913 final4bitCLA_0/CLA_3/xor_0/node B3d 0.22fF
+C914 Dff_13/a_47_6# Dff_13/b 0.10fF
+C915 Dff_9/qnot gnd 0.19fF
+C916 vdd clk 0.29fF
+C917 Dff_2/q2 Dff_2/qnot 0.05fF
+C918 gnd Gnd 0.40fF
+C919 Dff_1/a_131_15# Gnd 0.12fF
+C920 Dff_1/a_90_15# Gnd 0.14fF
+C921 Dff_1/a_47_6# Gnd 0.00fF
+C922 Dff_1/a_6_6# Gnd 0.00fF
+C923 Dff_1/qnot Gnd 0.21fF
+C924 Dff_1/q2 Gnd 0.05fF
+C925 Dff_1/a Gnd 0.45fF
+C926 Dff_1/q1 Gnd 0.06fF
+C927 Dff_1/b Gnd 0.21fF
+C928 A0 Gnd 0.22fF
+C929 vdd Gnd 8.44fF
+C930 gnd Gnd 0.40fF
+C931 Dff_0/a_131_15# Gnd 0.12fF
+C932 Dff_0/a_90_15# Gnd 0.14fF
+C933 Dff_0/a_47_6# Gnd 0.00fF
+C934 Dff_0/a_6_6# Gnd 0.00fF
+C935 Dff_0/qnot Gnd 0.21fF
+C936 Dff_0/q2 Gnd 0.05fF
+C937 Dff_0/a Gnd 0.45fF
+C938 Dff_0/q1 Gnd 0.06fF
+C939 Dff_0/b Gnd 0.21fF
+C940 Cin Gnd 0.20fF
+C941 vdd Gnd 8.44fF
+C942 vdd Gnd 3.00fF
+C943 final4bitCLA_0/CLA_2/C0 Gnd 3.55fF
+C944 gnd Gnd 0.31fF
+C945 final4bitCLA_0/CLA_3/or_0/a Gnd 0.49fF
+C946 final4bitCLA_0/CLA_3/and_1/nand_0/y Gnd 0.35fF
+C947 vdd Gnd 3.00fF
+C948 A3d Gnd 1.24fF
+C949 B3d Gnd 1.60fF
+C950 gnd Gnd 0.31fF
+C951 final4bitCLA_0/CLA_3/G0 Gnd 0.12fF
+C952 final4bitCLA_0/CLA_3/and_0/nand_0/y Gnd 0.35fF
+C953 gnd Gnd 0.17fF
+C954 Dff_12/d Gnd 0.47fF
+C955 final4bitCLA_0/CLA_3/xor_1/node Gnd 1.96fF
+C956 Vdd Gnd 1.21fF
+C957 gnd Gnd 0.17fF
+C958 final4bitCLA_0/CLA_3/xor_1/bnot Gnd 0.30fF
+C959 Vdd Gnd 1.21fF
+C960 gnd Gnd 0.17fF
+C961 final4bitCLA_0/CLA_3/xor_1/anot Gnd 0.12fF
+C962 final4bitCLA_0/CLA_3/P0 Gnd 0.94fF
+C963 Vdd Gnd 1.21fF
+C964 gnd Gnd 0.17fF
+C965 final4bitCLA_0/CLA_3/xor_0/node Gnd 1.96fF
+C966 Vdd Gnd 1.21fF
+C967 gnd Gnd 0.17fF
+C968 final4bitCLA_0/CLA_3/xor_0/bnot Gnd 0.30fF
+C969 Vdd Gnd 1.21fF
+C970 gnd Gnd 0.17fF
+C971 final4bitCLA_0/CLA_3/xor_0/anot Gnd 0.12fF
+C972 Vdd Gnd 1.21fF
+C973 vdd Gnd 3.05fF
+C974 gnd Gnd 0.34fF
+C975 final4bitCLA_0/CLA_3/or_0/nor_0/y Gnd 0.36fF
+C976 Dff_13/d Gnd 0.89fF
+C977 vdd Gnd 3.00fF
+C978 final4bitCLA_0/CLA_1/C0 Gnd 3.55fF
+C979 gnd Gnd 0.31fF
+C980 final4bitCLA_0/CLA_2/or_0/a Gnd 0.49fF
+C981 final4bitCLA_0/CLA_2/and_1/nand_0/y Gnd 0.35fF
+C982 vdd Gnd 3.00fF
+C983 A2d Gnd 1.20fF
+C984 B2d Gnd 1.61fF
+C985 gnd Gnd 0.31fF
+C986 final4bitCLA_0/CLA_2/G0 Gnd 0.12fF
+C987 final4bitCLA_0/CLA_2/and_0/nand_0/y Gnd 0.35fF
+C988 gnd Gnd 0.17fF
+C989 Dff_11/d Gnd 0.47fF
+C990 final4bitCLA_0/CLA_2/xor_1/node Gnd 1.96fF
+C991 Vdd Gnd 1.21fF
+C992 gnd Gnd 0.17fF
+C993 final4bitCLA_0/CLA_2/xor_1/bnot Gnd 0.30fF
+C994 Vdd Gnd 1.21fF
+C995 gnd Gnd 0.17fF
+C996 final4bitCLA_0/CLA_2/xor_1/anot Gnd 0.12fF
+C997 final4bitCLA_0/CLA_2/P0 Gnd 0.94fF
+C998 Vdd Gnd 1.21fF
+C999 gnd Gnd 0.17fF
+C1000 final4bitCLA_0/CLA_2/xor_0/node Gnd 1.96fF
+C1001 Vdd Gnd 1.21fF
+C1002 gnd Gnd 0.17fF
+C1003 final4bitCLA_0/CLA_2/xor_0/bnot Gnd 0.30fF
+C1004 Vdd Gnd 1.21fF
+C1005 gnd Gnd 0.17fF
+C1006 final4bitCLA_0/CLA_2/xor_0/anot Gnd 0.12fF
+C1007 Vdd Gnd 1.21fF
+C1008 vdd Gnd 3.05fF
+C1009 gnd Gnd 0.34fF
+C1010 final4bitCLA_0/CLA_2/or_0/nor_0/y Gnd 0.36fF
+C1011 vdd Gnd 3.00fF
+C1012 final4bitCLA_0/CLA_0/C0 Gnd 3.55fF
+C1013 gnd Gnd 0.31fF
+C1014 final4bitCLA_0/CLA_1/or_0/a Gnd 0.49fF
+C1015 final4bitCLA_0/CLA_1/and_1/nand_0/y Gnd 0.35fF
+C1016 vdd Gnd 3.00fF
+C1017 A1d Gnd 1.58fF
+C1018 B1d Gnd 1.63fF
+C1019 gnd Gnd 0.31fF
+C1020 final4bitCLA_0/CLA_1/G0 Gnd 0.12fF
+C1021 final4bitCLA_0/CLA_1/and_0/nand_0/y Gnd 0.35fF
+C1022 gnd Gnd 0.17fF
+C1023 Dff_10/d Gnd 0.32fF
+C1024 final4bitCLA_0/CLA_1/xor_1/node Gnd 1.96fF
+C1025 Vdd Gnd 1.21fF
+C1026 gnd Gnd 0.17fF
+C1027 final4bitCLA_0/CLA_1/xor_1/bnot Gnd 0.30fF
+C1028 Vdd Gnd 1.21fF
+C1029 gnd Gnd 0.17fF
+C1030 final4bitCLA_0/CLA_1/xor_1/anot Gnd 0.12fF
+C1031 final4bitCLA_0/CLA_1/P0 Gnd 0.94fF
+C1032 Vdd Gnd 1.21fF
+C1033 gnd Gnd 0.17fF
+C1034 final4bitCLA_0/CLA_1/xor_0/node Gnd 1.96fF
+C1035 Vdd Gnd 1.21fF
+C1036 gnd Gnd 0.17fF
+C1037 final4bitCLA_0/CLA_1/xor_0/bnot Gnd 0.30fF
+C1038 Vdd Gnd 1.21fF
+C1039 gnd Gnd 0.17fF
+C1040 final4bitCLA_0/CLA_1/xor_0/anot Gnd 0.12fF
+C1041 Vdd Gnd 1.21fF
+C1042 vdd Gnd 3.05fF
+C1043 gnd Gnd 0.34fF
+C1044 final4bitCLA_0/CLA_1/or_0/nor_0/y Gnd 0.36fF
+C1045 vdd Gnd 3.00fF
+C1046 Cind Gnd 2.57fF
+C1047 gnd Gnd 0.31fF
+C1048 final4bitCLA_0/CLA_0/or_0/a Gnd 0.49fF
+C1049 final4bitCLA_0/CLA_0/and_1/nand_0/y Gnd 0.35fF
+C1050 vdd Gnd 3.00fF
+C1051 A0d Gnd 1.27fF
+C1052 B0d Gnd 1.47fF
+C1053 gnd Gnd 0.31fF
+C1054 final4bitCLA_0/CLA_0/G0 Gnd 0.12fF
+C1055 final4bitCLA_0/CLA_0/and_0/nand_0/y Gnd 0.35fF
+C1056 gnd Gnd 0.17fF
+C1057 Dff_9/d Gnd 0.42fF
+C1058 final4bitCLA_0/CLA_0/xor_1/node Gnd 1.96fF
+C1059 Vdd Gnd 1.21fF
+C1060 gnd Gnd 0.17fF
+C1061 final4bitCLA_0/CLA_0/xor_1/bnot Gnd 0.30fF
+C1062 Vdd Gnd 1.21fF
+C1063 gnd Gnd 0.17fF
+C1064 final4bitCLA_0/CLA_0/xor_1/anot Gnd 0.12fF
+C1065 final4bitCLA_0/CLA_0/P0 Gnd 0.94fF
+C1066 Vdd Gnd 1.21fF
+C1067 gnd Gnd 0.17fF
+C1068 final4bitCLA_0/CLA_0/xor_0/node Gnd 1.96fF
+C1069 Vdd Gnd 1.21fF
+C1070 gnd Gnd 0.17fF
+C1071 final4bitCLA_0/CLA_0/xor_0/bnot Gnd 0.30fF
+C1072 Vdd Gnd 1.21fF
+C1073 gnd Gnd 0.17fF
+C1074 final4bitCLA_0/CLA_0/xor_0/anot Gnd 0.12fF
+C1075 Vdd Gnd 1.21fF
+C1076 vdd Gnd 3.05fF
+C1077 gnd Gnd 0.34fF
+C1078 final4bitCLA_0/CLA_0/or_0/nor_0/y Gnd 0.36fF
+C1079 gnd Gnd 0.40fF
+C1080 Dff_13/a_131_15# Gnd 0.12fF
+C1081 Dff_13/a_90_15# Gnd 0.14fF
+C1082 Dff_13/a_47_6# Gnd 0.00fF
+C1083 Dff_13/a_6_6# Gnd 0.00fF
+C1084 Dff_13/qnot Gnd 0.21fF
+C1085 Dff_13/q2 Gnd 0.05fF
+C1086 Dff_13/a Gnd 0.45fF
+C1087 Dff_13/q1 Gnd 0.06fF
+C1088 Dff_13/b Gnd 0.21fF
+C1089 vdd Gnd 8.44fF
+C1090 gnd Gnd 0.40fF
+C1091 Dff_12/a_131_15# Gnd 0.12fF
+C1092 Dff_12/a_90_15# Gnd 0.14fF
+C1093 S3 Gnd 0.34fF
+C1094 Dff_12/a_47_6# Gnd 0.00fF
+C1095 Dff_12/a_6_6# Gnd 0.00fF
+C1096 Dff_12/qnot Gnd 0.21fF
+C1097 Dff_12/q2 Gnd 0.05fF
+C1098 Dff_12/a Gnd 0.45fF
+C1099 Dff_12/q1 Gnd 0.06fF
+C1100 Dff_12/b Gnd 0.21fF
+C1101 vdd Gnd 8.44fF
+C1102 gnd Gnd 0.40fF
+C1103 Dff_11/a_131_15# Gnd 0.12fF
+C1104 Dff_11/a_90_15# Gnd 0.14fF
+C1105 S2 Gnd 0.26fF
+C1106 Dff_11/a_47_6# Gnd 0.00fF
+C1107 Dff_11/a_6_6# Gnd 0.00fF
+C1108 Dff_11/qnot Gnd 0.21fF
+C1109 Dff_11/q2 Gnd 0.05fF
+C1110 Dff_11/a Gnd 0.45fF
+C1111 Dff_11/q1 Gnd 0.06fF
+C1112 Dff_11/b Gnd 0.21fF
+C1113 vdd Gnd 8.44fF
+C1114 gnd Gnd 0.40fF
+C1115 Dff_10/a_131_15# Gnd 0.12fF
+C1116 Dff_10/a_90_15# Gnd 0.14fF
+C1117 S1 Gnd 0.34fF
+C1118 Dff_10/a_47_6# Gnd 0.00fF
+C1119 Dff_10/a_6_6# Gnd 0.00fF
+C1120 Dff_10/qnot Gnd 0.21fF
+C1121 Dff_10/q2 Gnd 0.05fF
+C1122 Dff_10/a Gnd 0.45fF
+C1123 Dff_10/q1 Gnd 0.06fF
+C1124 Dff_10/b Gnd 0.21fF
+C1125 vdd Gnd 8.44fF
+C1126 gnd Gnd 0.17fF
+C1127 inverter_4/OUT Gnd 0.10fF
+C1128 Cout Gnd 0.34fF
+C1129 Vdd Gnd 1.21fF
+C1130 gnd Gnd 0.40fF
+C1131 Dff_9/a_131_15# Gnd 0.12fF
+C1132 Dff_9/a_90_15# Gnd 0.14fF
+C1133 S0 Gnd 0.34fF
+C1134 Dff_9/a_47_6# Gnd 0.00fF
+C1135 Dff_9/a_6_6# Gnd 0.00fF
+C1136 Dff_9/qnot Gnd 0.21fF
+C1137 Dff_9/q2 Gnd 0.05fF
+C1138 Dff_9/a Gnd 0.45fF
+C1139 Dff_9/q1 Gnd 0.06fF
+C1140 Dff_9/b Gnd 0.21fF
+C1141 vdd Gnd 8.44fF
+C1142 gnd Gnd 0.40fF
+C1143 Dff_8/a_131_15# Gnd 0.12fF
+C1144 Dff_8/a_90_15# Gnd 0.14fF
+C1145 clk Gnd 46.79fF
+C1146 Dff_8/a_47_6# Gnd 0.00fF
+C1147 Dff_8/a_6_6# Gnd 0.00fF
+C1148 Dff_8/qnot Gnd 0.21fF
+C1149 Dff_8/q2 Gnd 0.05fF
+C1150 Dff_8/a Gnd 0.45fF
+C1151 Dff_8/q1 Gnd 0.06fF
+C1152 Dff_8/b Gnd 0.21fF
+C1153 B3 Gnd 0.20fF
+C1154 vdd Gnd 8.44fF
+C1155 gnd Gnd 0.17fF
+C1156 inverter_3/OUT Gnd 0.10fF
+C1157 Vdd Gnd 1.21fF
+C1158 gnd Gnd 0.40fF
+C1159 Dff_6/a_131_15# Gnd 0.12fF
+C1160 Dff_6/a_90_15# Gnd 0.14fF
+C1161 Dff_6/a_47_6# Gnd 0.00fF
+C1162 Dff_6/a_6_6# Gnd 0.00fF
+C1163 Dff_6/qnot Gnd 0.21fF
+C1164 Dff_6/q2 Gnd 0.05fF
+C1165 Dff_6/a Gnd 0.45fF
+C1166 Dff_6/q1 Gnd 0.06fF
+C1167 Dff_6/b Gnd 0.21fF
+C1168 B2 Gnd 0.21fF
+C1169 vdd Gnd 8.44fF
+C1170 gnd Gnd 0.40fF
+C1171 Dff_7/a_131_15# Gnd 0.12fF
+C1172 Dff_7/a_90_15# Gnd 0.14fF
+C1173 Dff_7/a_47_6# Gnd 0.00fF
+C1174 Dff_7/a_6_6# Gnd 0.00fF
+C1175 Dff_7/qnot Gnd 0.21fF
+C1176 Dff_7/q2 Gnd 0.05fF
+C1177 Dff_7/a Gnd 0.45fF
+C1178 Dff_7/q1 Gnd 0.06fF
+C1179 Dff_7/b Gnd 0.21fF
+C1180 A3 Gnd 0.21fF
+C1181 vdd Gnd 8.44fF
+C1182 gnd Gnd 0.17fF
+C1183 inverter_2/OUT Gnd 0.10fF
+C1184 Vdd Gnd 1.21fF
+C1185 gnd Gnd 0.40fF
+C1186 Dff_5/a_131_15# Gnd 0.12fF
+C1187 Dff_5/a_90_15# Gnd 0.14fF
+C1188 Dff_5/a_47_6# Gnd 0.00fF
+C1189 Dff_5/a_6_6# Gnd 0.00fF
+C1190 Dff_5/qnot Gnd 0.21fF
+C1191 Dff_5/q2 Gnd 0.05fF
+C1192 Dff_5/a Gnd 0.45fF
+C1193 Dff_5/q1 Gnd 0.06fF
+C1194 Dff_5/b Gnd 0.21fF
+C1195 A2 Gnd 0.21fF
+C1196 vdd Gnd 8.44fF
+C1197 gnd Gnd 0.17fF
+C1198 inverter_1/OUT Gnd 0.10fF
+C1199 Vdd Gnd 1.21fF
+C1200 gnd Gnd 0.40fF
+C1201 Dff_4/a_131_15# Gnd 0.12fF
+C1202 Dff_4/a_90_15# Gnd 0.14fF
+C1203 Dff_4/a_47_6# Gnd 0.00fF
+C1204 Dff_4/a_6_6# Gnd 0.00fF
+C1205 Dff_4/qnot Gnd 0.21fF
+C1206 Dff_4/q2 Gnd 0.05fF
+C1207 Dff_4/a Gnd 0.45fF
+C1208 Dff_4/q1 Gnd 0.06fF
+C1209 Dff_4/b Gnd 0.21fF
+C1210 B1 Gnd 0.22fF
+C1211 vdd Gnd 8.44fF
+C1212 gnd Gnd 0.17fF
+C1213 inverter_0/OUT Gnd 0.10fF
+C1214 Vdd Gnd 1.21fF
+C1215 gnd Gnd 0.40fF
+C1216 Dff_3/a_131_15# Gnd 0.12fF
+C1217 Dff_3/a_90_15# Gnd 0.14fF
+C1218 Dff_3/a_47_6# Gnd 0.00fF
+C1219 Dff_3/a_6_6# Gnd 0.00fF
+C1220 Dff_3/qnot Gnd 0.21fF
+C1221 Dff_3/q2 Gnd 0.05fF
+C1222 Dff_3/a Gnd 0.45fF
+C1223 Dff_3/q1 Gnd 0.06fF
+C1224 Dff_3/b Gnd 0.21fF
+C1225 A1 Gnd 0.22fF
+C1226 vdd Gnd 8.44fF
+C1227 gnd Gnd 0.40fF
+C1228 Dff_2/a_131_15# Gnd 0.12fF
+C1229 Dff_2/a_90_15# Gnd 0.14fF
+C1230 Dff_2/a_47_6# Gnd 0.00fF
+C1231 Dff_2/a_6_6# Gnd 0.00fF
+C1232 Dff_2/qnot Gnd 0.21fF
+C1233 Dff_2/q2 Gnd 0.05fF
+C1234 Dff_2/a Gnd 0.45fF
+C1235 Dff_2/q1 Gnd 0.06fF
+C1236 Dff_2/b Gnd 0.21fF
+C1237 B0 Gnd 0.24fF
+C1238 vdd Gnd 8.44fF
+
+
+.tran 0.001n 10n 
+
+.control
+run
+* set background & foreground color
+set color0 = white 
+set color1 = black
+set curplottitle = "Harshit Goyal - 2023102054"
+
+* plot the output waveforms
+plot Cout 2+S3 4+S2 6+S1 8+S0 10+B3 12+B2 14+B1 16+B0 18+A3 20+A2 22+A1 24+A0 26+Cin 28+clk
+plot Cout 2+S3 4+S2 6+S1 8+S0 10+B3d 12+B2d 14+B1d 16+B0d 18+A3d 20+A2d 22+A1d 24+A0d 26+Cind 28+clk
+
+* plotting the internal signals
+* plot A0 2+A1 4+A2 6+A3 8+A0d 10+A1d 12+A2d 14+A3d 16+clk
+* plot B0 2+B1 4+B2 6+B3 8+B0d 10+B1d 12+B2d 14+B3d 16+clk
+* plot Cin 2+Cind 4+clk
+.endc
+
+* propogation delay for each bit
+
+* propogation delay for S0
+.measure tran tpdrS0
++ trig v(clk) val={0.5*Supply} rise=3
++ targ v(S0) val={0.5*Supply} rise=1
+
+.measure tran tpdfS0
++ trig v(clk) val={0.5*Supply} rise=2
++ targ v(S0) val={0.5*Supply} fall=1
+
+.measure tran tpdS0 param='(tpdrS0+tpdfS0)/2'
+
+* propogation delay for S1
+.measure tran tpdrS1
++ trig v(clk) val={0.5*Supply} rise=3
++ targ v(S1) val={0.5*Supply} rise=1
+
+.measure tran tpdfS1
++ trig v(clk) val={0.5*Supply} rise=2
++ targ v(S1) val={0.5*Supply} fall=1
+
+.measure tran tpdS1 param='(tpdrS1+tpdfS1)/2'
+
+* propogation delay for S2
+.measure tran tpdrS2
++ trig v(clk) val={0.5*Supply} rise=3
++ targ v(S2) val={0.5*Supply} rise=1
+
+.measure tran tpdfS2
++ trig v(clk) val={0.5*Supply} rise=2
++ targ v(S2) val={0.5*Supply} fall=1
+
+.measure tran tpdS2 param='(tpdrS2+tpdfS2)/2'
+
+* propogation delay for S3
+.measure tran tpdrS3
++ trig v(clk) val={0.5*Supply} rise=3
++ targ v(S3) val={0.5*Supply} rise=1
+
+.measure tran tpdfS3
++ trig v(clk) val={0.5*Supply} rise=2
++ targ v(S3) val={0.5*Supply} fall=1
+
+.measure tran tpdS3 param='(tpdrS3+tpdfS3)/2'
+
+* propogation delay for Cout
+.measure tran tpdrCout
++ trig v(clk) val={0.5*Supply} rise=2
++ targ v(Cout) val={0.5*Supply} rise=1
+
+.measure tran tpdfCout
++ trig v(clk) val={0.5*Supply} rise=3
++ targ v(Cout) val={0.5*Supply} fall=1
+
+.measure tran tpdCout param='(tpdrCout+tpdfCout)/2'
+
+.end
