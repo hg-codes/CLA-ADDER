@@ -1,0 +1,124 @@
+* .set ngbehavior = pspice
+.include Dff.sub
+.include OR.sub
+.include AND.sub
+.include XOR.sub
+.include 3_AND.sub
+.include 3_OR.sub
+.include 4_AND.sub
+.include 4_OR.sub
+.include 5_AND.sub
+.include 5_OR.sub
+
+.subckt CLA1 clk Cin A0 A1 A2 A3 B0 B1 B2 B3 S0 S1 S2 S3 Cout A0d A1d A2d A3d B0d B1d B2d B3d Cind Vdd Gnd
+    
+    * Carry look ahead adder
+    * clk : clock
+    * A0, A1, A2, A3: input bits of A
+    * B0, B1, B2, B3: input bits of B
+    * Cin: input carry
+    * S0, S1, S2, S3: output bits of sum
+    * Cout: output carry
+    * vdd, gnd: power and ground nodes
+    
+    * Dff for each bit
+    xDff0 clk Cin Cind vdd gnd Dff
+
+    xDff1 clk A0 A0d vdd gnd Dff
+    xDff2 clk A1 A1d vdd gnd Dff
+    xDff3 clk A2 A2d vdd gnd Dff
+    xDff4 clk A3 A3d vdd gnd Dff
+
+    xDff5 clk B0 B0d vdd gnd Dff
+    xDff6 clk B1 B1d vdd gnd Dff
+    xDff7 clk B2 B2d vdd gnd Dff
+    xDff8 clk B3 B3d vdd gnd Dff
+
+    * #######################################################################################
+    * Carry look ahead adder (Implementation BY using AND, OR, XOR, 3_AND, 3_OR, 4_AND, 4_OR, 5_AND, 5_OR)
+    * Carry Generation
+    * gi=AiBi
+    xand0 A0d B0d G0 vdd gnd AND
+    xand1 A1d B1d G1 vdd gnd AND
+    xand2 A2d B2d G2 vdd gnd AND
+    xand3 A3d B3d G3 vdd gnd AND
+
+    * Carry Propagation
+    * pi=Ai^Bi
+    xxor0 A0d B0d P0 vdd gnd XOR
+    xxor1 A1d B1d P1 vdd gnd XOR
+    xxor2 A2d B2d P2 vdd gnd XOR
+    xxor3 A3d B3d P3 vdd gnd XOR
+
+    * Carry Calculation Using Carry Generation and Propagation
+    
+    * c0=g0+p0Cin
+    xand4 P0 Cind P0Cin vdd gnd AND
+    xor0 G0 P0Cin C0 vdd gnd OR
+
+    * c1=g1+p1g0+p1p0Cin
+    x3and0 P1 P0 Cind P1P0Cin vdd gnd 3_AND
+    xand5 P1 G0 P1G0 vdd gnd AND
+    x3or0 P1G0 P1P0Cin G1 C1 vdd gnd 3_OR
+
+    * c2=g2+p2g1+p2p1g0+p2p1p0Cin
+    x4and0 P2 P1 P0 Cind P2P1P0Cin vdd gnd 4_AND
+    x3and1 P2 P1 G0 P2P1G0 vdd gnd 3_AND
+    xand6 P2 G1 P2G1 vdd gnd AND
+    x4or0 P2G1 P2P1P0Cin P2P1G0 G2 C2 vdd gnd 4_OR
+
+    * c3 or cout=g3+p3g2+p3p2g1+p3p2p1g0+p3p2p1p0Cin
+    x5and0 P3 P2 P1 P0 Cind P3P2P1P0Cin vdd gnd 5_AND
+    x4and1 P3 P2 P1 G0 P3P2P1G0 vdd gnd 4_AND
+    x3and2 P3 P2 G1 P3P2G1 vdd gnd 3_AND
+    xand7 P3 G2 P3G2 vdd gnd AND
+    x5or0 P3G2 P3P2P1P0Cin P3P2P1G0 P3P2G1 G3 Coutd vdd gnd 5_OR
+
+    * Sum Calculation
+    * si=pi^Ci
+    xxor4 P0 Cind S0d vdd gnd XOR 
+    xxor5 P1 C0 S1d vdd gnd XOR
+    xxor6 P2 C1 S2d vdd gnd XOR
+    xxor7 P3 C2 S3d vdd gnd XOR
+    * #######################################################################################
+
+    *  * Carry Generation
+    * xand0 A0d B0d G0 vdd gnd AND
+    * xand1 A1d B1d G1 vdd gnd AND
+    * xand2 A2d B2d G2 vdd gnd AND
+    * xand3 A3d B3d G3 vdd gnd AND
+
+    * * Carry Propagation
+    * xxor0 A0d B0d P0 vdd gnd XOR
+    * xxor1 A1d B1d P1 vdd gnd XOR
+    * xxor2 A2d B2d P2 vdd gnd XOR
+    * xxor3 A3d B3d P3 vdd gnd XOR
+
+    * * Carry Calculation Using Carry Generation and Propagation
+    * xand4 P0 Cind PC0 vdd gnd AND
+    * xor0 G0 PC0 C0 vdd gnd OR
+
+    * xand5 P1 C0 PC1 vdd gnd AND
+    * xor1 G1 PC1 C1 vdd gnd OR
+
+    * xand6 P2 C1 PC2 vdd gnd AND
+    * xor2 G2 PC2 C2 vdd gnd OR
+
+    * xand7 P3 C2 PC3 vdd gnd AND
+    * xor3 G3 PC3 Coutd vdd gnd OR
+
+    * * Sum Calculation
+    * xxor4 P0 Cind S0d vdd gnd XOR 
+    * xxor5 P1 C0 S1d vdd gnd XOR
+    * xxor6 P2 C1 S2d vdd gnd XOR
+    * xxor7 P3 C2 S3d vdd gnd XOR
+
+    * Dff for Cout and Sum
+    xDff9 clk Coutd Cout vdd gnd Dff
+
+    xDff10 clk S0d S0 vdd gnd Dff
+    xDff11 clk S1d S1 vdd gnd Dff
+    xDff12 clk S2d S2 vdd gnd Dff
+    xDff13 clk S3d S3 vdd gnd Dff
+
+.ends CLA1

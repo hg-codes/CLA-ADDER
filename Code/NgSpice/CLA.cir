@@ -1,0 +1,105 @@
+.include CLA.sub
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+* .param LAMBDA=0.09u
+* .param width_P=20*LAMBDA
+* .param width_N=10*LAMBDA
+.global gnd vdd
+
+
+Vdd vdd gnd {SUPPLY}
+
+* vinv v gnd pulse 0 1.8 0ns 5ns 5ns 100ns 200ns
+
+VinA0 A0 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinA1 A1 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA2 A2 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinA3 A3 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+VinB0 B0 gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+VinB1 B1 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB2 B2 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+VinB3 B3 gnd pulse 1.8 0 0ns 0ns 0ns 2ns 4ns
+
+VinCin Cin gnd pulse 0 1.8 0ns 0ns 0ns 2ns 4ns
+
+xCLA Cin A0 A1 A2 A3 B0 B1 B2 B3 S0 S1 S2 S3 Cout vdd gnd CLA 
+
+* output driving circuit
+xinverter0 S0 S0n vdd gnd NOT 
+xinverter1 S1 S1n vdd gnd NOT
+xinverter2 S2 S2n vdd gnd NOT
+xinverter3 S3 S3n vdd gnd NOT
+xinverter4 Cout Coutn vdd gnd NOT
+
+.tran 0.01n 10n 
+
+.control
+run
+* set background & foreground color
+set color0 = white 
+set color1 = black
+
+* plot the waveforms
+plot Cout 2+S3 4+S2 6+S1 8+S0 10+B3 12+B2 14+B1 16+B0 18+A3 20+A2 22+A1 24+A0 26+Cin
+
+.endc
+
+* propogation delay for each bit
+
+* propogation delay for S0
+.measure tran tpdrS0
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S0) val={0.5*Supply} rise=1
+
+.measure tran tpdfS0
++ trig v(A0) val={0.5*Supply} fall=1
++ targ v(S0) val={0.5*Supply} fall=1
+
+.measure tran tpdS0 param='(tpdrS0+tpdfS0)/2'
+
+* propogation delay for S1
+.measure tran tpdrS1
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S1) val={0.5*Supply} rise=1
+
+.measure tran tpdfS1
++ trig v(A0) val={0.5*Supply} fall=1
++ targ v(S1) val={0.5*Supply} fall=1
+
+.measure tran tpdS1 param='(tpdrS1+tpdfS1)/2'
+
+* propogation delay for S2
+.measure tran tpdrS2
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S2) val={0.5*Supply} rise=1
+
+.measure tran tpdfS2
++ trig v(A0) val={0.5*Supply} fall=1
++ targ v(S2) val={0.5*Supply} fall=1
+
+.measure tran tpdS2 param='(tpdrS2+tpdfS2)/2'
+
+* propogation delay for S3
+.measure tran tpdrS3
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(S3) val={0.5*Supply} rise=1
+
+.measure tran tpdfS3
++ trig v(A0) val={0.5*Supply} fall=1
++ targ v(S3) val={0.5*Supply} fall=1
+
+.measure tran tpdS3 param='(tpdrS3+tpdfS3)/2'
+
+* propogation delay for Cout
+.measure tran tpdrCout
++ trig v(A0) val={0.5*Supply} rise=1
++ targ v(Cout) val={0.5*Supply} rise=1
+
+.measure tran tpdfCout
++ trig v(A0) val={0.5*Supply} fall=1
++ targ v(Cout) val={0.5*Supply} fall=1
+
+.measure tran tpdCout param='(tpdrCout+tpdfCout)/2'
+
+.end
